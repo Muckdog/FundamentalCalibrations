@@ -27,7 +27,7 @@
     <main>
         <section id="request-quote">
             <h2 style="text-align: center;">Request a Quote</h2>
-            <form name="quoteForm" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+            <form name="quoteForm" method="POST" action="/" data-netlify="true">
                 <input type="hidden" name="form-name" value="quoteForm">
                 <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
                 <div class="form-group">
@@ -47,6 +47,19 @@
                             <textarea name="notes[1]" placeholder="Additional notes about the item" maxlength="500"></textarea>
                         </div>
                     </div>
+                    <!-- Hidden template for dynamic items -->
+                    <template id="item-template">
+                        <div class="item-row editable" data-item="">
+                            <label>Item </label>
+                            <input type="text" name="manufacturer[]" placeholder="Manufacturer" required>
+                            <input type="text" name="model[]" placeholder="Model" required>
+                            <input type="text" name="serial[]" placeholder="Serial" required>
+                            <input type="text" name="asset[]" placeholder="Asset Number" required>
+                            <div class="note-box">
+                                <textarea name="notes[]" placeholder="Additional notes about the item" maxlength="500"></textarea>
+                            </div>
+                        </div>
+                    </template>
                 </div>
                 <button type="button" onclick="addItem()">+</button>
                 <button type="submit">Submit</button>
