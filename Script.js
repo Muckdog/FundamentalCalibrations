@@ -1,4 +1,3 @@
-// script.js
 let itemCount = 1;
 
 function addItem() {
@@ -14,6 +13,7 @@ function addItem() {
     if (nextItem) {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
+        nextItem.querySelector('label').textContent = `Item ${itemCount}`; // Ensure item number updates
     } else {
         console.warn('No more predefined items available. Maximum reached (50).');
     }
@@ -45,14 +45,25 @@ function removeItem(button) {
         const textarea = row.getElementsByTagName('textarea')[0];
         for (let input of inputs) input.value = '';
         if (textarea) textarea.value = '';
+        itemCount--; // Decrement to allow re-adding
     } else {
         alert('Item 1 cannot be deleted.');
     }
 }
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Quote submitted! Data will be processed.');
+    const form = document.querySelector('form[name="quoteForm"]');
+    const items = document.querySelectorAll('.item-row');
+    items.forEach(item => {
+        if (item.classList.contains('editable')) {
+            alert('Please finalize all items before submitting.');
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+    });
+    // Let Netlify handle submission natively
+    console.log('Form submitted, check Netlify Forms for data');
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
