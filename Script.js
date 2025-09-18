@@ -14,14 +14,10 @@ function addItem() {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
         nextItem.querySelector('label').textContent = `Item ${itemCount}`; // Ensure item number updates
-        // Trigger finalizeItem to add buttons if all fields are filled
+        // Check if all fields are filled to add buttons
         const inputs = nextItem.querySelectorAll('input');
         const textarea = nextItem.querySelector('textarea');
-        let allFilled = true;
-        for (let input of inputs) {
-            if (!input.value.trim()) allFilled = false;
-        }
-        if (textarea && !textarea.value.trim()) allFilled = false;
+        let allFilled = Array.from(inputs).every(input => input.value.trim()) && (textarea ? textarea.value.trim() : true);
         if (allFilled) finalizeItem(nextItem);
     } else {
         console.warn('No more predefined items available. Maximum reached (10).');
@@ -30,10 +26,13 @@ function addItem() {
 
 function finalizeItem(itemDiv) {
     itemDiv.classList.remove('editable');
-    itemDiv.innerHTML += `
-        <button type="button" onclick="editItem(this)">Edit</button>
-        <button type="button" onclick="removeItem(this)">-</button>
-    `;
+    // Add buttons only if not already present
+    if (!itemDiv.querySelector('button')) {
+        itemDiv.innerHTML += `
+            <button type="button" onclick="editItem(this)">Edit</button>
+            <button type="button" onclick="removeItem(this)">-</button>
+        `;
+    }
 }
 
 function editItem(button) {
@@ -61,18 +60,20 @@ function removeItem(button) {
 }
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
-    const form = document.querySelector('form[name="quoteForm"]');
     const items = document.querySelectorAll('.item-row');
+    let hasEditable = false;
     items.forEach(item => {
         if (item.classList.contains('editable')) {
-            alert('Please finalize all items before submitting.');
-            e.preventDefault();
-            e.stopPropagation();
-            return;
+            hasEditable = true;
         }
     });
-    // Let Netlify handle submission natively
-    console.log('Form submitted, check Netlify Forms for data');
+    if (hasEditable) {
+        alert('Please finalize all items before submitting.');
+        e.preventDefault();
+    } else {
+        console.log('Form submitted, check Netlify Forms for data');
+        // Let Netlify handle submission natively
+    }
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
