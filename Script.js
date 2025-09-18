@@ -51,7 +51,7 @@ function removeItem(button) {
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
     const form = document.querySelector('form[name="quoteForm"]');
-    const items = document.querySelectorAll('.item-row');
+    const items = document.querySelectorAll('.item-row:not(.hidden)');
     items.forEach(item => {
         if (item.classList.contains('editable')) {
             alert('Please finalize all items before submitting.');
@@ -60,7 +60,22 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
             return;
         }
     });
-    console.log('Form submitted, check Netlify Forms for data');
+
+    // Log all visible form data
+    const formData = new FormData(form);
+    const data = {};
+    for (let [name, value] of formData.entries()) {
+        if (name.includes('[')) {
+            const baseName = name.split('[')[0];
+            if (!data[baseName]) data[baseName] = [];
+            data[baseName].push(value || ''); // Include empty fields
+        } else {
+            data[name] = value;
+        }
+    }
+    console.log('Submitted Data:', data);
+
+    // Let Netlify handle submission natively
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
