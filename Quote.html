@@ -40,6 +40,11 @@
                         <input type="text" name="model[1]" placeholder="Model" required>
                         <input type="text" name="serial[1]" placeholder="Serial" required>
                         <input type="text" name="asset[1]" placeholder="Asset Number" required>
+                        <div class="note-slider">
+                            <label>Additional Notes:</label>
+                            <input type="range" name="notes[1]" min="0" max="500" value="0">
+                            <span id="note-value-1">0/500</span>
+                        </div>
                     </div>
                 </div>
                 <button type="button" onclick="addItem()">+</button>
