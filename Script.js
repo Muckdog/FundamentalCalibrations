@@ -13,8 +13,9 @@ function addItem() {
     if (nextItem) {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
+        nextItem.querySelector('label').textContent = `Item ${itemCount}`; // Ensure item number updates
     } else {
-        console.warn('No more predefined items available');
+        console.warn('No more predefined items available. Maximum reached (50).');
     }
 }
 
@@ -37,12 +38,17 @@ function editItem(button) {
 
 function removeItem(button) {
     const row = button.parentElement;
-    row.classList.add('hidden');
-    row.classList.remove('editable');
-    const inputs = row.getElementsByTagName('input');
-    const textarea = row.getElementsByTagName('textarea')[0];
-    for (let input of inputs) input.value = '';
-    if (textarea) textarea.value = '';
+    if (parseInt(row.getAttribute('data-item')) > 1) {
+        row.classList.add('hidden');
+        row.classList.remove('editable');
+        const inputs = row.getElementsByTagName('input');
+        const textarea = row.getElementsByTagName('textarea')[0];
+        for (let input of inputs) input.value = '';
+        if (textarea) textarea.value = '';
+        itemCount--; // Decrement to allow re-adding
+    } else {
+        alert('Item 1 cannot be deleted.');
+    }
 }
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
@@ -56,6 +62,7 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
             return;
         }
     });
+    // Let Netlify handle submission natively
     console.log('Form submitted, check Netlify Forms for data');
 });
 
