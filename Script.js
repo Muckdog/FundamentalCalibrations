@@ -13,7 +13,7 @@ function addItem() {
     if (nextItem) {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
-        nextItem.querySelector('label').textContent = `Item ${itemCount}`; // Ensure item number updates
+        nextItem.querySelector('label').textContent = `Instrument ${itemCount}`; // Changed to "Instrument"
         // Add delete button immediately for new items
         finalizeItem(nextItem);
     } else {
@@ -46,18 +46,25 @@ function removeItem(button) {
     }
 }
 
-// Client-side validation for contact info only
-document.addEventListener('input', (e) => {
-    const form = document.querySelector('form[name="quoteForm"]');
-    const requiredFields = form.querySelectorAll('input[required]');
-    let allRequiredFilled = true;
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) allRequiredFilled = false;
+document.getElementById('quoteForm').addEventListener('submit', (e) => {
+    const items = document.querySelectorAll('.item-row');
+    let hasEditable = false;
+    items.forEach(item => {
+        if (item.classList.contains('editable')) {
+            hasEditable = true;
+        }
     });
-    if (!allRequiredFilled && form.checkValidity()) {
-        alert('Please fill in all contact information (Name, Company, Phone, Email) before submitting.');
+    if (hasEditable) {
+        alert('Please finalize all items before submitting.');
+        e.preventDefault();
+    } else {
+        console.log('Form submitted, check Netlify Forms for data');
     }
-    // Ensure Item 1 finalizes if all its fields are filled
+    // Netlify will handle submission if no prevention occurs
+});
+
+// Ensure Item 1 finalizes on input if all fields are filled
+document.addEventListener('input', (e) => {
     const firstItem = document.querySelector('.item-row[data-item="1"]');
     if (firstItem && !firstItem.classList.contains('editable')) return;
     const inputs = firstItem.getElementsByTagName('input');
