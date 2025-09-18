@@ -56,9 +56,11 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
     });
     if (hasEditable) {
         alert('Please finalize all items before submitting.');
+        e.preventDefault();
+    } else {
+        console.log('Form submitted to Netlify.');
     }
-    // Let Netlify handle submission natively without preventing default
-    console.log('Form submitted, check Netlify Forms for data');
+    // Always allow Netlify to process the submission (no unconditional preventDefault)
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
