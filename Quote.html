@@ -47,19 +47,27 @@
                             <textarea name="notes[1]" placeholder="Additional notes about the item" maxlength="500"></textarea>
                         </div>
                     </div>
-                    <!-- Hidden template for dynamic items -->
-                    <template id="item-template">
-                        <div class="item-row editable" data-item="">
-                            <label>Item </label>
-                            <input type="text" name="manufacturer[]" placeholder="Manufacturer" required>
-                            <input type="text" name="model[]" placeholder="Model" required>
-                            <input type="text" name="serial[]" placeholder="Serial" required>
-                            <input type="text" name="asset[]" placeholder="Asset Number" required>
-                            <div class="note-box">
-                                <textarea name="notes[]" placeholder="Additional notes about the item" maxlength="500"></textarea>
-                            </div>
+                    <!-- Predefined hidden items for Netlify to detect -->
+                    <div class="item-row hidden" data-item="2">
+                        <label>Item 2</label>
+                        <input type="text" name="manufacturer[2]" placeholder="Manufacturer" required>
+                        <input type="text" name="model[2]" placeholder="Model" required>
+                        <input type="text" name="serial[2]" placeholder="Serial" required>
+                        <input type="text" name="asset[2]" placeholder="Asset Number" required>
+                        <div class="note-box">
+                            <textarea name="notes[2]" placeholder="Additional notes about the item" maxlength="500"></textarea>
                         </div>
-                    </template>
+                    </div>
+                    <div class="item-row hidden" data-item="3">
+                        <label>Item 3</label>
+                        <input type="text" name="manufacturer[3]" placeholder="Manufacturer" required>
+                        <input type="text" name="model[3]" placeholder="Model" required>
+                        <input type="text" name="serial[3]" placeholder="Serial" required>
+                        <input type="text" name="asset[3]" placeholder="Asset Number" required>
+                        <div class="note-box">
+                            <textarea name="notes[3]" placeholder="Additional notes about the item" maxlength="500"></textarea>
+                        </div>
+                    </div>
                 </div>
                 <button type="button" onclick="addItem()">+</button>
                 <button type="submit">Submit</button>
