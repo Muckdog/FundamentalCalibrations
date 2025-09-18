@@ -13,7 +13,6 @@ function addItem() {
         <input type="text" name="serial[${itemCount}]" placeholder="Serial" required>
         <input type="text" name="asset[${itemCount}]" placeholder="Asset Number" required>
         <div class="note-box">
-            <label>Additional Notes about the item:</label>
             <textarea name="notes[${itemCount}]" placeholder="Additional notes about the item" maxlength="500"></textarea>
         </div>
     `;
