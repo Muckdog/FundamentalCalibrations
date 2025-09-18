@@ -14,11 +14,8 @@ function addItem() {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
         nextItem.querySelector('label').textContent = `Item ${itemCount}`; // Ensure item number updates
-        // Check if all fields are filled to add buttons
-        const inputs = nextItem.querySelectorAll('input');
-        const textarea = nextItem.querySelector('textarea');
-        let allFilled = Array.from(inputs).every(input => input.value.trim()) && (textarea ? textarea.value.trim() : true);
-        if (allFilled) finalizeItem(nextItem);
+        // Add buttons immediately for new items
+        finalizeItem(nextItem);
     } else {
         console.warn('No more predefined items available. Maximum reached (10).');
     }
