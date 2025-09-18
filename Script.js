@@ -46,7 +46,7 @@ function removeItem(button) {
     }
 }
 
-// Client-side validation to alert user before submission
+// Client-side validation before submission
 document.addEventListener('submit', (e) => {
     const items = document.querySelectorAll('.item-row');
     let hasEditable = false;
@@ -58,8 +58,6 @@ document.addEventListener('submit', (e) => {
     if (hasEditable) {
         alert('Please finalize all items before submitting.');
         e.preventDefault();
-    } else {
-        console.log('Form submitted to Netlify.');
     }
 });
 
