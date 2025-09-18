@@ -12,17 +12,12 @@ function addItem() {
         <input type="text" name="model[${itemCount}]" placeholder="Model" required>
         <input type="text" name="serial[${itemCount}]" placeholder="Serial" required>
         <input type="text" name="asset[${itemCount}]" placeholder="Asset Number" required>
-        <div class="note-slider">
-            <label>Additional Notes:</label>
-            <input type="range" name="notes[${itemCount}]" min="0" max="500" value="0" oninput="updateNoteValue(${itemCount}, this.value)">
-            <span id="note-value-${itemCount}">0/500</span>
+        <div class="note-box">
+            <label>Additional Notes about the item:</label>
+            <textarea name="notes[${itemCount}]" placeholder="Additional notes about the item" maxlength="500"></textarea>
         </div>
     `;
     itemsDiv.appendChild(itemDiv);
-}
-
-function updateNoteValue(itemNum, value) {
-    document.getElementById(`note-value-${itemNum}`).textContent = `${value}/500`;
 }
 
 function finalizeItem(itemDiv) {
@@ -69,11 +64,11 @@ document.addEventListener('input', (e) => {
     const firstItem = document.querySelector('.item-row[data-item="1"]');
     if (firstItem && !firstItem.classList.contains('editable')) return;
     const inputs = firstItem.getElementsByTagName('input');
-    const range = firstItem.querySelector('input[type="range"]');
+    const textarea = firstItem.getElementsByTagName('textarea')[0];
     let allFilled = true;
     for (let input of inputs) {
         if (!input.value.trim()) allFilled = false;
     }
-    if (range.value === "0") allFilled = false;
+    if (!textarea.value.trim()) allFilled = false;
     if (allFilled && firstItem) finalizeItem(firstItem);
 });
