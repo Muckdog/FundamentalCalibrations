@@ -4,207 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request a Quote - Fundamental Calibrations</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Request a quote for precision calibration services from Fundamental Calibrations. Serving PA, DE, NJ with expert metrology.">
+    <meta name="keywords" content="request quote, calibration quote, metrology services, Pennsylvania, Delaware, New Jersey">
+    <meta property="og:title" content="Request a Quote - Fundamental Calibrations">
+    <meta property="og:description" content="Get a custom quote for our 30-year expert calibration services.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://yourdomain.com/quote.html">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Replace with your kit -->
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Services</a>
-                    <div class="dropdown-content">
-                        <a href="quote.html">Request a Quote</a>
+<body class="bg-gray-100 text-gray-800 font-lato">
+    <header class="bg-green-600 sticky top-0 z-10 shadow-md">
+        <nav class="container mx-auto p-4" role="navigation" aria-label="Main navigation">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="index.html" class="text-white hover:text-gray-200" aria-label="Home">Home</a></li>
+                <li class="relative group">
+                    <a href="#" class="text-white hover:text-gray-200" aria-haspopup="true">Services</a>
+                    <div class="absolute hidden group-hover:block bg-green-700 mt-2 w-40 rounded-md shadow-lg">
+                        <a href="services.html" class="block px-4 py-2 text-white hover:bg-green-600" aria-label="Services">Services</a>
+                        <a href="quote.html" class="block px-4 py-2 text-white hover:bg-green-600" aria-label="Request a Quote">Request a Quote</a>
                     </div>
                 </li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html" class="text-white hover:text-gray-200" aria-label="About">About</a></li>
+                <li><a href="contact.html" class="text-white hover:text-gray-200" aria-label="Contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="request-quote">
-            <h2 style="text-align: center;">Request a Quote</h2>
-            <p style="text-align: center;">(Fill out the information below, or contact us at sales@fundamentalcalibrations.com)</p>
-            <form id="quoteForm" name="quoteForm" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+    <main class="container mx-auto py-6">
+        <section id="request-quote" class="text-center">
+            <h2 class="text-3xl font-oswald text-green-600 mb-2">Request a Quote</h2>
+            <p class="text-lg mb-4">(Fill out the information below, or contact us at <a href="mailto:sales@fundamentalcalibrations.com" class="text-green-600 hover:underline">sales@fundamentalcalibrations.com</a>)</p>
+            <form id="quoteForm" name="quoteForm" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="max-w-3xl mx-auto">
                 <input type="hidden" name="form-name" value="quoteForm">
                 <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="text" name="company" placeholder="Company Name" required>
-                    <input type="tel" name="phone" placeholder="Phone" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="text" name="companyAddress" placeholder="Company Address" required>
-                    <input type="text" name="title" placeholder="Title (e.g., Manager, Engineer)">
-                    <input type="text" name="city" placeholder="City" required>
-                    <select name="state" required>
-                        <option value="">Select State</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
-                    <input type="text" name="zipcode" placeholder="Zipcode" required>
-                    <label for="instrumentList">If you currently have an instrument list, please upload here</label>
-                    <input type="file" id="instrumentList" name="instrumentList" accept=".pdf,.csv">
-                    <label for="isBroken">Instrument(s) on quote require repair</label>
-                    <input type="checkbox" id="isBroken" name="isBroken">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="title" class="block text-left">Title</label>
+                        <input type="text" name="title" id="title" placeholder="Title (e.g., Manager, Engineer)" class="w-full p-2 rounded" loading="lazy">
+                        <label for="company" class="block text-left mt-2">Company</label>
+                        <input type="text" name="company" id="company" placeholder="Company Name" required class="w-full p-2 rounded" loading="lazy">
+                        <label for="phone" class="block text-left mt-2">Phone Number</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Phone" required class="w-full p-2 rounded" loading="lazy">
+                        <label for="unitApt" class="block text-left mt-2">Unit/Apt #</label>
+                        <input type="text" name="unitApt" id="unitApt" placeholder="Unit/Apt #" class="w-full p-2 rounded" loading="lazy">
+                        <label for="state" class="block text-left mt-2">State</label>
+                        <select name="state" id="state" required class="w-full p-2 rounded" loading="lazy">
+                            <option value="">Select State</option>
+                            <option value="CA">California</option>
+                            <option value="TX">Texas</option>
+                            <option value="NY">New York</option>
+                            <option value="FL">Florida</option>
+                            <option value="IL">Illinois</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="OH">Ohio</option>
+                            <option value="GA">Georgia</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="MI">Michigan</option>
+                            <option value="WA">Washington</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="name" class="block text-left">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Name" required class="w-full p-2 rounded" loading="lazy">
+                        <label for="email" class="block text-left mt-2">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email" required class="w-full p-2 rounded" loading="lazy">
+                        <label for="companyAddress" class="block text-left mt-2">Address</label>
+                        <input type="text" name="companyAddress" id="companyAddress" placeholder="Company Address" required class="w-full p-2 rounded" loading="lazy">
+                        <label for="city" class="block text-left mt-2">City</label>
+                        <input type="text" name="city" id="city" placeholder="City" required class="w-full p-2 rounded" loading="lazy">
+                        <label for="zipcode" class="block text-left mt-2">Zip/Postal Code</label>
+                        <input type="text" name="zipcode" id="zipcode" placeholder="Zipcode" required class="w-full p-2 rounded" loading="lazy">
+                    </div>
                 </div>
-                <div id="items">
+                <div class="mt-4">
+                    <label for="instrumentList" class="block text-left">If you currently have an instrument list, please upload here</label>
+                    <input type="file" id="instrumentList" name="instrumentList" accept=".pdf,.csv" class="w-full p-2 rounded">
+                    <label for="isBroken" class="block text-left mt-2">Instrument(s) on quote require repair</label>
+                    <input type="checkbox" id="isBroken" name="isBroken" class="mr-2">
+                </div>
+                <div id="items" class="mt-4">
                     <div class="item-row" data-item="1">
-                        <label>Instrument 1</label>
-                        <input type="text" name="manufacturer[1]" placeholder="Manufacturer">
-                        <input type="text" name="model[1]" placeholder="Model">
-                        <input type="text" name="serial[1]" placeholder="Serial">
-                        <input type="text" name="asset[1]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[1]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #1</label>
+                        <input type="text" name="manufacturer[1]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[1]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[1]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[1]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[1]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="2">
-                        <label>Instrument 2</label>
-                        <input type="text" name="manufacturer[2]" placeholder="Manufacturer">
-                        <input type="text" name="model[2]" placeholder="Model">
-                        <input type="text" name="serial[2]" placeholder="Serial">
-                        <input type="text" name="asset[2]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[2]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #2</label>
+                        <input type="text" name="manufacturer[2]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[2]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[2]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[2]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[2]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="3">
-                        <label>Instrument 3</label>
-                        <input type="text" name="manufacturer[3]" placeholder="Manufacturer">
-                        <input type="text" name="model[3]" placeholder="Model">
-                        <input type="text" name="serial[3]" placeholder="Serial">
-                        <input type="text" name="asset[3]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[3]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #3</label>
+                        <input type="text" name="manufacturer[3]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[3]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[3]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[3]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[3]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="4">
-                        <label>Instrument 4</label>
-                        <input type="text" name="manufacturer[4]" placeholder="Manufacturer">
-                        <input type="text" name="model[4]" placeholder="Model">
-                        <input type="text" name="serial[4]" placeholder="Serial">
-                        <input type="text" name="asset[4]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[4]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #4</label>
+                        <input type="text" name="manufacturer[4]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[4]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[4]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[4]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[4]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="5">
-                        <label>Instrument 5</label>
-                        <input type="text" name="manufacturer[5]" placeholder="Manufacturer">
-                        <input type="text" name="model[5]" placeholder="Model">
-                        <input type="text" name="serial[5]" placeholder="Serial">
-                        <input type="text" name="asset[5]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[5]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #5</label>
+                        <input type="text" name="manufacturer[5]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[5]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[5]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[5]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[5]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="6">
-                        <label>Instrument 6</label>
-                        <input type="text" name="manufacturer[6]" placeholder="Manufacturer">
-                        <input type="text" name="model[6]" placeholder="Model">
-                        <input type="text" name="serial[6]" placeholder="Serial">
-                        <input type="text" name="asset[6]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[6]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #6</label>
+                        <input type="text" name="manufacturer[6]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[6]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[6]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[6]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[6]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="7">
-                        <label>Instrument 7</label>
-                        <input type="text" name="manufacturer[7]" placeholder="Manufacturer">
-                        <input type="text" name="model[7]" placeholder="Model">
-                        <input type="text" name="serial[7]" placeholder="Serial">
-                        <input type="text" name="asset[7]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[7]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #7</label>
+                        <input type="text" name="manufacturer[7]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[7]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[7]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[7]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[7]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="8">
-                        <label>Instrument 8</label>
-                        <input type="text" name="manufacturer[8]" placeholder="Manufacturer">
-                        <input type="text" name="model[8]" placeholder="Model">
-                        <input type="text" name="serial[8]" placeholder="Serial">
-                        <input type="text" name="asset[8]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[8]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #8</label>
+                        <input type="text" name="manufacturer[8]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[8]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[8]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[8]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[8]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="9">
-                        <label>Instrument 9</label>
-                        <input type="text" name="manufacturer[9]" placeholder="Manufacturer">
-                        <input type="text" name="model[9]" placeholder="Model">
-                        <input type="text" name="serial[9]" placeholder="Serial">
-                        <input type="text" name="asset[9]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[9]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #9</label>
+                        <input type="text" name="manufacturer[9]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[9]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[9]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[9]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[9]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="10">
-                        <label>Instrument 10</label>
-                        <input type="text" name="manufacturer[10]" placeholder="Manufacturer">
-                        <input type="text" name="model[10]" placeholder="Model">
-                        <input type="text" name="serial[10]" placeholder="Serial">
-                        <input type="text" name="asset[10]" placeholder="Asset Number">
-                        <div class="note-box">
-                            <textarea name="notes[10]" placeholder="Additional notes about the instrument" maxlength="500"></textarea>
+                        <label class="block text-left">Instrument #10</label>
+                        <input type="text" name="manufacturer[10]" placeholder="Manufacturer" class="w-full p-2 rounded">
+                        <input type="text" name="model[10]" placeholder="Model" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="serial[10]" placeholder="Serial" class="w-full p-2 rounded mt-2">
+                        <input type="text" name="asset[10]" placeholder="Asset Number" class="w-full p-2 rounded mt-2">
+                        <div class="note-box mt-2">
+                            <textarea name="notes[10]" placeholder="Additional notes about the instrument" maxlength="500" class="w-full p-2 rounded"></textarea>
                         </div>
                     </div>
                 </div>
-                <button type="button" onclick="addItem()">+</button>
-                <button type="submit">Submit</button>
+                <button type="button" onclick="addItem()" class="mt-4 px-4 py-3 bg-green-600 text-white rounded hover:bg-green-700" aria-label="Add another instrument">+</button>
+                <button type="submit" class="mt-4 px-4 py-3 bg-green-600 text-white rounded hover:bg-green-700" aria-label="Submit quote request">Submit</button>
             </form>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Fundamental Calibrations</p>
+    <footer class="bg-green-800 text-white text-center py-4">
+        <p>&copy; 2025 Fundamental Calibrations | <a href="about.html" class="text-gray-200 hover:underline" aria-label="About page">About</a> | <a href="services.html" class="text-gray-200 hover:underline" aria-label="Services page">Services</a> | <a href="contact.html" class="text-gray-200 hover:underline" aria-label="Contact page">Contact</a> | <a href="privacy-policy.html" class="text-gray-200 hover:underline" aria-label="Privacy Policy">Privacy Policy</a> | <a href="terms-of-service.html" class="text-gray-200 hover:underline" aria-label="Terms of Service">Terms of Service</a></p>
+        <div class="payment-options mt-2">
+            <i class="fab fa-cc-visa text-xl mr-2" aria-label="Visa accepted"></i>
+            <i class="fab fa-cc-mastercard text-xl mr-2" aria-label="MasterCard accepted"></i>
+            <i class="fab fa-cc-amex text-xl mr-2" aria-label="American Express accepted"></i>
+            <i class="fab fa-cc-discover text-xl" aria-label="Discover accepted"></i>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
