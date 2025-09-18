@@ -46,7 +46,7 @@ function removeItem(button) {
     }
 }
 
-// Client-side validation before submission
+// Client-side validation (alert if editable items exist when submitting)
 document.addEventListener('submit', (e) => {
     const items = document.querySelectorAll('.item-row');
     let hasEditable = false;
