@@ -14,7 +14,7 @@ function addItem() {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
         nextItem.querySelector('label').textContent = `Item ${itemCount}`; // Ensure item number updates
-        // Add buttons immediately for new items
+        // Add delete button immediately for new items
         finalizeItem(nextItem);
     } else {
         console.warn('No more predefined items available. Maximum reached (10).');
@@ -23,21 +23,11 @@ function addItem() {
 
 function finalizeItem(itemDiv) {
     itemDiv.classList.remove('editable');
-    // Add buttons only if not already present
+    // Add delete button only if not already present
     if (!itemDiv.querySelector('button')) {
         itemDiv.innerHTML += `
-            <button type="button" onclick="editItem(this)">Edit</button>
             <button type="button" onclick="removeItem(this)">-</button>
         `;
-    }
-}
-
-function editItem(button) {
-    const row = button.parentElement;
-    if (!row.classList.contains('editable')) {
-        row.classList.add('editable');
-        const buttons = row.getElementsByTagName('button');
-        for (let btn of buttons) btn.remove();
     }
 }
 
