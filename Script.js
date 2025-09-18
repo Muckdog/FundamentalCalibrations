@@ -37,12 +37,18 @@ function editItem(button) {
 
 function removeItem(button) {
     const row = button.parentElement;
-    row.classList.add('hidden');
-    row.classList.remove('editable');
-    const inputs = row.getElementsByTagName('input');
-    const textarea = row.getElementsByTagName('textarea')[0];
-    for (let input of inputs) input.value = '';
-    if (textarea) textarea.value = '';
+    if (parseInt(row.getAttribute('data-item')) > 1) { // Only allow deletion for Item 2+
+        row.classList.add('hidden');
+        row.classList.remove('editable');
+        const inputs = row.getElementsByTagName('input');
+        const textarea = row.getElementsByTagName('textarea')[0];
+        for (let input of inputs) input.value = '';
+        if (textarea) textarea.value = '';
+        // Reorder remaining items if necessary (optional, commented out for now)
+        // This could be complex; let me know if you want this feature
+    } else {
+        alert('Item 1 cannot be deleted.');
+    }
 }
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
