@@ -53,20 +53,32 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
         }
     });
 
-    // Collect all form data manually to ensure all items are included
+    // Collect all form data manually
     const formData = new FormData(form);
     const data = {};
     for (let [name, value] of formData.entries()) {
-        if (!data[name]) data[name] = [];
-        data[name].push(value);
+        if (name.includes('[')) {
+            const baseName = name.split('[')[0];
+            if (!data[baseName]) data[baseName] = [];
+            data[baseName].push(value);
+        } else {
+            data[name] = value;
+        }
     }
 
-    // Convert to URL-encoded format for Netlify
+    // Log data for debugging
+    console.log('Submitted Data:', data);
+
+    // Convert to URL-encoded format
     const params = new URLSearchParams();
     for (let key in data) {
-        data[key].forEach((value, index) => {
-            params.append(key, value);
-        });
+        if (Array.isArray(data[key])) {
+            data[key].forEach((value, index) => {
+                params.append(key, value);
+            });
+        } else {
+            params.append(key, data[key]);
+        }
     }
 
     fetch('/', {
@@ -75,7 +87,16 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: params.toString()
-    }).then(() => alert('Quote submitted! Check your email.')).catch(() => alert('Error submitting.'));
+    }).then(response => {
+        console.log('Response:', response);
+        return response.text();
+    }).then(text => {
+        console.log('Response Text:', text);
+        alert('Quote submitted! Check your email.');
+    }).catch(error => {
+        console.error('Error:', error);
+        alert('Error submitting.');
+    });
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
