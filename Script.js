@@ -46,20 +46,18 @@ function removeItem(button) {
     }
 }
 
-// Client-side validation on input to guide users
+// Client-side validation for contact info only
 document.addEventListener('input', (e) => {
     const form = document.querySelector('form[name="quoteForm"]');
-    const items = document.querySelectorAll('.item-row');
-    let hasEditable = false;
-    items.forEach(item => {
-        if (item.classList.contains('editable') && item.querySelectorAll('input, textarea').length === item.querySelectorAll('input[value], textarea[value]').length) {
-            hasEditable = true;
-        }
+    const requiredFields = form.querySelectorAll('input[required]');
+    let allRequiredFilled = true;
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) allRequiredFilled = false;
     });
-    if (hasEditable && form.checkValidity()) {
-        alert('Please finalize all items before submitting.');
+    if (!allRequiredFilled && form.checkValidity()) {
+        alert('Please fill in all contact information (Name, Company, Phone, Email) before submitting.');
     }
-    // Ensure Item 1 finalizes if all fields are filled
+    // Ensure Item 1 finalizes if all its fields are filled
     const firstItem = document.querySelector('.item-row[data-item="1"]');
     if (firstItem && !firstItem.classList.contains('editable')) return;
     const inputs = firstItem.getElementsByTagName('input');
@@ -70,4 +68,57 @@ document.addEventListener('input', (e) => {
     }
     if (!textarea.value.trim()) allFilled = false;
     if (allFilled && firstItem) finalizeItem(firstItem);
+});
+
+// Intercept form submission to filter empty fields
+document.getElementById('quoteForm').addEventListener('submit', (e) => {
+    const form = document.getElementById('quoteForm');
+    const items = document.querySelectorAll('.item-row');
+    let hasEditable = false;
+
+    // Check for editable items
+    items.forEach(item => {
+        if (item.classList.contains('editable')) {
+            hasEditable = true;
+        }
+    });
+
+    if (hasEditable) {
+        alert('Please finalize all items before submitting.');
+        e.preventDefault();
+        return;
+    }
+
+    // Filter out empty item fields before submission
+    items.forEach(item => {
+        const inputs = item.querySelectorAll('input');
+        const textarea = item.querySelector('textarea');
+        let isEmpty = true;
+        inputs.forEach(input => {
+            if (input.value.trim()) isEmpty = false;
+        });
+        if (textarea && textarea.value.trim()) isEmpty = false;
+        if (isEmpty) {
+            inputs.forEach(input => input.disabled = true); // Disable empty fields
+            if (textarea) textarea.disabled = true;
+        }
+    });
+
+    // Ensure required fields are filled
+    const requiredFields = form.querySelectorAll('input[required]');
+    let allRequiredFilled = true;
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) allRequiredFilled = false;
+    });
+    if (!allRequiredFilled) {
+        alert('Please fill in all contact information (Name, Company, Phone, Email) before submitting.');
+        e.preventDefault();
+        // Re-enable disabled fields to avoid submission issues
+        items.forEach(item => {
+            item.querySelectorAll('input').forEach(input => input.disabled = false);
+            const textarea = item.querySelector('textarea');
+            if (textarea) textarea.disabled = false;
+        });
+        return;
+    }
 });
