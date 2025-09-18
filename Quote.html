@@ -26,13 +26,15 @@
     </header>
     <main>
         <section id="request-quote">
-            <h2>Request a Quote</h2>
+            <h2 style="text-align: center;">Request a Quote</h2>
             <form name="quoteForm" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="quoteForm">
-                <input type="text" name="name" placeholder="Name" required><br>
-                <input type="text" name="company" placeholder="Company Name" required><br>
-                <input type="tel" name="phone" placeholder="Phone" required><br>
-                <input type="email" name="email" placeholder="Email" required><br>
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="text" name="company" placeholder="Company Name" required>
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
                 <div id="items">
                     <div class="item-row" data-item="1">
                         <label>Item 1</label>
