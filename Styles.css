@@ -97,6 +97,9 @@ footer {
     border: 1px solid #fb7459;
     background: #f9f9f9;
 }
+.item-row.hidden {
+    display: none;
+}
 .item-row label {
     flex: 0 0 100%;
     text-align: center;
@@ -139,4 +142,7 @@ footer {
 }
 #quoteForm button[type="button"]:hover, #quoteForm button[type="submit"]:hover {
     background: #fb7459;
+}
+.hidden {
+    display: none;
 }
