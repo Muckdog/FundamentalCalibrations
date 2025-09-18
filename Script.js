@@ -53,18 +53,28 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
         }
     });
 
-    // Collect all form data manually
+    // Collect all form data from DOM
     const formData = new FormData(form);
-    const data = {};
-    for (let [name, value] of formData.entries()) {
-        if (name.includes('[')) {
-            const baseName = name.split('[')[0];
-            if (!data[baseName]) data[baseName] = [];
-            data[baseName].push(value);
-        } else {
-            data[name] = value;
-        }
-    }
+    const data = {
+        name: form.querySelector('input[name="name"]').value,
+        company: form.querySelector('input[name="company"]').value,
+        phone: form.querySelector('input[name="phone"]').value,
+        email: form.querySelector('input[name="email"]').value
+    };
+    data.manufacturer = [];
+    data.model = [];
+    data.serial = [];
+    data.asset = [];
+    data.notes = [];
+
+    items.forEach(item => {
+        const itemNum = item.getAttribute('data-item');
+        data.manufacturer.push(form.querySelector(`input[name="manufacturer[${itemNum}]"]`).value);
+        data.model.push(form.querySelector(`input[name="model[${itemNum}]"]`).value);
+        data.serial.push(form.querySelector(`input[name="serial[${itemNum}]"]`).value);
+        data.asset.push(form.querySelector(`input[name="asset[${itemNum}]"]`).value);
+        data.notes.push(form.querySelector(`textarea[name="notes[${itemNum}]"]`).value);
+    });
 
     // Log data for debugging
     console.log('Submitted Data:', data);
@@ -97,6 +107,9 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
         console.error('Error:', error);
         alert('Error submitting.');
     });
+
+    // Fallback to default form submission for Netlify
+    form.submit();
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
