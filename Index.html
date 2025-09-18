@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Replace with your kit -->
 </head>
-<body class="bg-gray-100 text-gray-800 font-lato">
+<body class="bg-gray-200 text-gray-800 font-lato">
     <header class="bg-green-600 sticky top-0 z-10 shadow-md">
         <nav class="container mx-auto p-4" role="navigation" aria-label="Main navigation">
             <ul class="flex justify-center space-x-6">
@@ -33,30 +33,40 @@
     <main class="container mx-auto py-6">
         <section id="home" class="text-center">
             <h1 class="text-4xl font-oswald text-green-600 mb-2">Welcome to Fundamental Calibrations</h1>
-            <p class="text-lg">The Core of Quality: 30 Years of Precision Calibration</p>
-            <p class="text-lg">Proudly veteran- and family-owned, delivering expertise you can trust.</p>
-            <a href="quote.html" class="mt-4 inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700" aria-label="Request a Quote">Request a Quote</a>
+            <p class="text-lg">Hey there! We’ve been perfecting calibration for 30 years with a passion for quality.</p>
+            <p class="text-lg">As a veteran- and family-run outfit, we’re all about trust and getting the job done right for you.</p>
+            <img src="images/calibration-equipment.jpg" alt="Precision calibration equipment in action" class="mx-auto my-4 w-full max-w-md rounded-lg shadow-md" loading="lazy">
+            <img src="images/welcome-team.jpg" alt="Our dedicated calibration team" class="mx-auto my-4 w-full max-w-md rounded-lg shadow-md" loading="lazy">
+            <a href="quote.html" class="mt-4 inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700" aria-label="Request a Quote">Get a Quote</a>
             <div class="testimonial-spot mt-8 p-4 bg-white border-l-4 border-green-600 shadow-md">
                 <p class="text-lg italic">Testimonial Spot 1</p>
             </div>
         </section>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div class="service-card">
-                <h3 class="text-2xl font-oswald text-green-600">Low-Cost Solutions</h3>
-                <p>We offer affordable calibration services without compromising quality. Our cost-effective solutions are designed to fit your budget, making precision accessible for businesses of all sizes.</p>
+            <div class="service-card bg-white relative group">
+                <img src="images/affordable-options.jpg" alt="Affordable calibration solutions" class="w-full h-32 object-cover rounded-t-lg" loading="lazy">
+                <h3 class="text-2xl font-oswald text-green-600">Affordable Options</h3>
+                <p>We keep costs low without cutting corners—perfect for any business looking to save while staying precise.</p>
+                <div class="absolute hidden group-hover:block bg-gray-800 text-white p-2 rounded shadow-lg mt-2 w-64 left-1/2 transform -translate-x-1/2 z-10">
+                    <p>Cost-effective solutions designed to fit your budget, making precision accessible for all sizes of businesses.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <h3 class="text-2xl font-oswald text-green-600">Unbeatable Turnaround Times</h3>
-                <p>Experience operational readiness with our lightning-fast calibration services. We prioritize your schedule, delivering precise results with unmatched speed to keep your operations running smoothly, no matter the demand. Expedited service is available upon request.</p>
+            <div class="service-card bg-white relative group">
+                <img src="images/fast-turnaround.jpg" alt="Fast calibration turnaround" class="w-full h-32 object-cover rounded-t-lg" loading="lazy">
+                <h3 class="text-2xl font-oswald text-green-600">Fast Turnaround Times</h3>
+                <p>We know time’s money—our quick calibrations get you back to work fast, with expedited options if you need them even sooner.</p>
                 <ul class="list-disc pl-5 mt-2">
-                    <li>Standard turnarounds completed in as little as 48 hours.</li>
-                    <li>Guaranteed on-time delivery for every project.</li>
+                    <li>Turnarounds as quick as 48 hours.</li>
+                    <li>Always on time, guaranteed.</li>
                 </ul>
+                <div class="absolute hidden group-hover:block bg-gray-800 text-white p-2 rounded shadow-lg mt-2 w-64 left-1/2 transform -translate-x-1/2 z-10">
+                    <p>Lightning-fast service with standard 48-hour turnarounds and expedited options, ensuring on-time delivery.</p>
+                </div>
             </div>
         </div>
         <div class="feature-block">
             <h2 class="text-3xl font-oswald text-green-600 text-center mb-4">A Look into Fundamental Calibrations</h2>
-            <div class="feature-container bg-orange-500 text-white py-6 px-4">
+            <div class="feature-container bg-[#F97316] text-white py-8 px-4 grid grid-cols-4 gap-6 w-full left-0">
                 <div class="feature-item text-center">
                     <i class="fas fa-flag-usa text-3xl mb-2"></i>
                     <p class="font-bold">Veteran Owned</p>
@@ -76,25 +86,33 @@
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div class="service-card">
-                <h3 class="text-2xl font-oswald text-green-600">Full-Service Excellence</h3>
-                <p>Our full-service approach goes beyond calibration—we meticulously clean your instruments before returning them, ensuring they're in top condition and ready for use, saving you time and effort. We go above and beyond by not only cleaning but also ensuring the safety of your equipment during the process, using secure handling and packaging techniques to prevent damage. Additionally, if any repairs are needed, our skilled technicians are equipped to handle minor fixes, extending the life of your instruments and reducing downtime, all while maintaining the highest standards of care and precision.</p>
+            <div class="service-card bg-white relative group">
+                <img src="images/full-service-care.jpg" alt="Full-service calibration care in action" class="w-full h-32 object-cover rounded-t-lg" loading="lazy">
+                <h3 class="text-2xl font-oswald text-green-600">Full-Service Care</h3>
+                <p>We don’t just calibrate—we clean your gear thoroughly and handle minor fixes to keep it in top shape, all with a focus on safety and care.</p>
+                <div class="absolute hidden group-hover:block bg-gray-800 text-white p-2 rounded shadow-lg mt-2 w-64 left-1/2 transform -translate-x-1/2 z-10">
+                    <p>Meticulous cleaning and minor repairs to ensure safety and extend equipment life, saving you time and effort.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <h3 class="text-2xl font-oswald text-green-600">Precision Calibration Services</h3>
-                <p>With a rapidly growing scope, our calibration services are expanding to meet your evolving needs. Serving Pennsylvania, Delaware, and New Jersey, we're committed to delivering precision and adapting to serve you better every day.</p>
+            <div class="service-card bg-white relative group">
+                <img src="images/precision-calibration.jpg" alt="Precision calibration services" class="w-full h-32 object-cover rounded-t-lg" loading="lazy">
+                <h3 class="text-2xl font-oswald text-green-600">Precision Calibration</h3>
+                <p>We’re growing to meet your needs across PA, DE, and NJ, delivering spot-on results with standards you can count on.</p>
                 <ul class="list-disc pl-5 mt-2">
-                    <li>Certified calibration services tailored to industry standards.</li>
-                    <li>Traceability to national and international measurement standards.</li>
-                    <li>Continuous improvement through expanded service offerings.</li>
+                    <li>Certified to industry standards.</li>
+                    <li>Traceable to global benchmarks.</li>
+                    <li>Always improving our offerings.</li>
                 </ul>
+                <div class="absolute hidden group-hover:block bg-gray-800 text-white p-2 rounded shadow-lg mt-2 w-64 left-1/2 transform -translate-x-1/2 z-10">
+                    <p>Certified, traceable calibration services expanding across PA, DE, and NJ with continuous improvement.</p>
+                </div>
             </div>
         </div>
         <div class="testimonial-spot mt-8 p-4 bg-white border-l-4 border-green-600 shadow-md">
             <p class="text-lg italic">Testimonial Spot 2</p>
         </div>
         <section class="text-center my-6">
-            <p class="text-lg">Can’t find what you're looking for?</p>
+            <p class="text-lg">Need help or more info?</p>
             <a href="contact.html" class="mt-2 inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700">Contact Us</a>
             <p class="mt-2">sales@fundamentalcalibrations.com</p>
             <div class="testimonial-spot mt-8 p-4 bg-white border-l-4 border-green-600 shadow-md">
