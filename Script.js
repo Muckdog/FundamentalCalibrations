@@ -1,21 +1,26 @@
 let itemCount = 1;
 
 function addItem() {
+    if (itemCount >= 50) {
+        alert('Maximum of 50 items reached.');
+        return;
+    }
     itemCount++;
-    const items = document.querySelectorAll('.item-row');
-    let nextItem = null;
-    for (let item of items) {
-        if (item.classList.contains('hidden') && parseInt(item.getAttribute('data-item')) === itemCount) {
-            nextItem = item;
-            break;
-        }
-    }
-    if (nextItem) {
-        nextItem.classList.remove('hidden');
-        nextItem.classList.add('editable');
-    } else {
-        console.warn('No more predefined items available. Maximum reached (50).');
-    }
+    const itemsDiv = document.getElementById('items');
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'item-row editable';
+    itemDiv.setAttribute('data-item', itemCount);
+    itemDiv.innerHTML = `
+        <label>Item ${itemCount}</label>
+        <input type="text" name="manufacturer[${itemCount}]" placeholder="Manufacturer" required>
+        <input type="text" name="model[${itemCount}]" placeholder="Model" required>
+        <input type="text" name="serial[${itemCount}]" placeholder="Serial" required>
+        <input type="text" name="asset[${itemCount}]" placeholder="Asset Number" required>
+        <div class="note-box">
+            <textarea name="notes[${itemCount}]" placeholder="Additional notes about the item" maxlength="500"></textarea>
+        </div>
+    `;
+    itemsDiv.appendChild(itemDiv);
 }
 
 function finalizeItem(itemDiv) {
@@ -38,12 +43,8 @@ function editItem(button) {
 function removeItem(button) {
     const row = button.parentElement;
     if (parseInt(row.getAttribute('data-item')) > 1) { // Only allow deletion for Item 2+
-        row.classList.add('hidden');
-        row.classList.remove('editable');
-        const inputs = row.getElementsByTagName('input');
-        const textarea = row.getElementsByTagName('textarea')[0];
-        for (let input of inputs) input.value = '';
-        if (textarea) textarea.value = '';
+        row.remove();
+        itemCount--;
     } else {
         alert('Item 1 cannot be deleted.');
     }
@@ -51,7 +52,7 @@ function removeItem(button) {
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
     const form = document.querySelector('form[name="quoteForm"]');
-    const items = document.querySelectorAll('.item-row:not(.hidden)');
+    const items = document.querySelectorAll('.item-row');
     items.forEach(item => {
         if (item.classList.contains('editable')) {
             alert('Please finalize all items before submitting.');
@@ -60,22 +61,7 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
             return;
         }
     });
-
-    // Log all visible form data
-    const formData = new FormData(form);
-    const data = {};
-    for (let [name, value] of formData.entries()) {
-        if (name.includes('[')) {
-            const baseName = name.split('[')[0];
-            if (!data[baseName]) data[baseName] = [];
-            data[baseName].push(value || ''); // Include empty fields
-        } else {
-            data[name] = value;
-        }
-    }
-    console.log('Submitted Data:', data);
-
-    // Let Netlify handle submission natively
+    console.log('Form submitted, check Netlify Forms for data');
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
