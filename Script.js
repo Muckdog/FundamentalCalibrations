@@ -14,8 +14,17 @@ function addItem() {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
         nextItem.querySelector('label').textContent = `Item ${itemCount}`; // Ensure item number updates
+        // Trigger finalizeItem to add buttons if all fields are filled
+        const inputs = nextItem.querySelectorAll('input');
+        const textarea = nextItem.querySelector('textarea');
+        let allFilled = true;
+        for (let input of inputs) {
+            if (!input.value.trim()) allFilled = false;
+        }
+        if (textarea && !textarea.value.trim()) allFilled = false;
+        if (allFilled) finalizeItem(nextItem);
     } else {
-        console.warn('No more predefined items available. Maximum reached (50).');
+        console.warn('No more predefined items available. Maximum reached (10).');
     }
 }
 
