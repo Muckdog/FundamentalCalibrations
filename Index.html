@@ -31,11 +31,12 @@
         </section>
         <section id="request-quote">
             <h2>Request a Quote</h2>
-            <form id="quoteForm">
-                <input type="text" placeholder="Name" required><br>
-                <input type="text" placeholder="Company Name" required><br>
-                <input type="tel" placeholder="Phone" required><br>
-                <input type="email" placeholder="Email" required><br>
+            <form name="quoteForm" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="quoteForm">
+                <input type="text" name="name" placeholder="Name" required><br>
+                <input type="text" name="company" placeholder="Company Name" required><br>
+                <input type="tel" name="phone" placeholder="Phone" required><br>
+                <input type="email" name="email" placeholder="Email" required><br>
                 <div id="items"></div>
                 <button type="button" onclick="addItem()">+</button>
                 <button type="submit">Submit</button>
@@ -52,13 +53,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-<form name="quoteForm" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="quoteForm">
-    <input type="text" name="name" placeholder="Name" required><br>
-    <input type="text" name="company" placeholder="Company Name" required><br>
-    <input type="tel" name="phone" placeholder="Phone" required><br>
-    <input type="email" name="email" placeholder="Email" required><br>
-    <div id="items"></div>
-    <button type="button" onclick="addItem()">+</button>
-    <button type="submit">Submit</button>
-</form>
