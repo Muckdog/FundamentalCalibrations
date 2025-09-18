@@ -1,148 +1,76 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: white;
-    color: #333;
-    font-family: Arial, sans-serif;
+/* Tailwind base, adding custom styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Lato';
+        src: url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap') format('woff2');
+    }
+    @font-face {
+        font-family: 'Oswald';
+        src: url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap') format('woff2');
+    }
+    body {
+        @apply bg-gray-100 text-gray-800 font-lato;
+    }
 }
-header {
-    background: #1BB687;
-    padding: 1em;
-    position: sticky;
-    top: 0;
+
+@layer components {
+    .service-card {
+        @apply bg-white p-6 rounded-lg shadow-md text-center;
+    }
+    .feature-block {
+        @apply my-10;
+    }
+    .feature-container {
+        @apply bg-orange-500 text-white py-6 px-4 grid grid-cols-4 gap-4 w-full mx-auto max-w-5xl;
+    }
+    .feature-item {
+        @apply text-center;
+    }
+    .testimonial-spot {
+        @apply mt-8 p-4 bg-white border-l-4 border-green-600 shadow-md;
+    }
+    .payment-options {
+        @apply mt-2 text-sm;
+    }
+    .payment-options i {
+        @apply text-xl mr-2;
+    }
 }
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-nav ul li {
-    margin: 0 1em;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-nav ul li a:hover {
-    color: #ddd;
-}
-.dropdown {
+
+/* Custom positioning for full-width orange block */
+.feature-container {
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
     position: relative;
-    display: inline-block;
+    transform: translateX(-50%);
 }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: #1BB687;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
+
+/* Responsive Adjustments */
+@screen md {
+    .feature-container {
+        @apply grid-cols-4;
+    }
+    .services-grid {
+        @apply grid-cols-2;
+    }
 }
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-.dropdown-content a:hover {
-    background: #fb7459;
-}
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-}
-section {
-    margin-bottom: 20px;
-    border: 2px solid #fb7459;
-    padding: 10px;
-}
-footer {
-    background: #1BB687;
-    color: white;
-    text-align: center;
-    padding: 1em;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-#request-quote h2 {
-    text-align: center;
-}
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.form-group input {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid #fb7459;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-.item-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #fb7459;
-    background: #f9f9f9;
-}
-.item-row.hidden {
-    display: none;
-}
-.item-row label {
-    flex: 0 0 100%;
-    text-align: center;
-}
-.item-row input[type="text"] {
-    flex: 1 1 20%;
-    margin: 5px 0;
-    padding: 5px;
-    border: 1px solid #fb7459;
-    border-radius: 3px;
-}
-.item-row button {
-    margin: 0 5px;
-}
-.note-box {
-    flex: 0 0 100%;
-    margin: 10px 0;
-}
-.note-box label {
-    display: none;
-}
-.note-box textarea {
-    width: 100%;
-    height: 50px;
-    resize: none;
-    overflow-y: auto;
-    border: 1px solid #fb7459;
-    padding: 5px;
-    box-sizing: border-box;
-}
-#quoteForm button[type="button"], #quoteForm button[type="submit"] {
-    margin: 10px auto;
-    padding: 10px 20px;
-    background: #1BB687;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-}
-#quoteForm button[type="button"]:hover, #quoteForm button[type="submit"]:hover {
-    background: #fb7459;
-}
-.hidden {
-    display: none;
+
+@screen sm {
+    .feature-container {
+        @apply grid-cols-1;
+    }
+    .feature-item {
+        @apply mb-4;
+    }
+    nav ul {
+        @apply flex-col items-center space-y-2;
+    }
+    .dropdown-content {
+        @apply static w-full mt-0;
+    }
 }
