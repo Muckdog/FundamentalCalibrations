@@ -37,7 +37,23 @@
                 <input type="text" name="company" placeholder="Company Name" required><br>
                 <input type="tel" name="phone" placeholder="Phone" required><br>
                 <input type="email" name="email" placeholder="Email" required><br>
-                <div id="items"></div>
+                <div id="items">
+                    <div class="item-row" data-item="1">
+                        <label>Item 1</label>
+                        <select name="manufacturer[1]" required>
+                            <option value="">Select Manufacturer</option>
+                            <option value="Fluke">Fluke</option>
+                            <option value="Keysight">Keysight</option>
+                        </select>
+                        <select name="model[1]" required>
+                            <option value="">Select Model</option>
+                            <option value="Model A">Model A</option>
+                            <option value="Model B">Model B</option>
+                        </select>
+                        <input type="text" name="serial[1]" placeholder="Serial" required>
+                        <input type="text" name="asset[1]" placeholder="Asset Number" required>
+                    </div>
+                </div>
                 <button type="button" onclick="addItem()">+</button>
                 <button type="submit">Submit</button>
             </form>
