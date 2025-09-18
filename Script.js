@@ -14,7 +14,7 @@ function addItem() {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
     } else {
-        console.warn('No more predefined items available');
+        console.warn('No more predefined items available. Maximum reached (50).');
     }
 }
 
@@ -44,8 +44,6 @@ function removeItem(button) {
         const textarea = row.getElementsByTagName('textarea')[0];
         for (let input of inputs) input.value = '';
         if (textarea) textarea.value = '';
-        // Reorder remaining items if necessary (optional, commented out for now)
-        // This could be complex; let me know if you want this feature
     } else {
         alert('Item 1 cannot be deleted.');
     }
