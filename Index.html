@@ -12,9 +12,9 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li class="dropdown">
-                    <a href="#services" class="dropbtn">Services</a>
+                    <a href="#" class="dropbtn">Services</a>
                     <div class="dropdown-content">
-                        <a href="#request-quote">Request a Quote</a>
+                        <a href="quote.html">Request a Quote</a>
                         <a href="#documents">Documents and Accreditation</a>
                         <a href="#industries">Industries We Serve</a>
                     </div>
@@ -28,35 +28,6 @@
         <section id="home">
             <h2>Welcome</h2>
             <p>Calibration services made simple.</p>
-        </section>
-        <section id="request-quote">
-            <h2>Request a Quote</h2>
-            <form name="quoteForm" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="quoteForm">
-                <input type="text" name="name" placeholder="Name" required><br>
-                <input type="text" name="company" placeholder="Company Name" required><br>
-                <input type="tel" name="phone" placeholder="Phone" required><br>
-                <input type="email" name="email" placeholder="Email" required><br>
-                <div id="items">
-                    <div class="item-row" data-item="1">
-                        <label>Item 1</label>
-                        <select name="manufacturer[1]" required>
-                            <option value="">Select Manufacturer</option>
-                            <option value="Fluke">Fluke</option>
-                            <option value="Keysight">Keysight</option>
-                        </select>
-                        <select name="model[1]" required>
-                            <option value="">Select Model</option>
-                            <option value="Model A">Model A</option>
-                            <option value="Model B">Model B</option>
-                        </select>
-                        <input type="text" name="serial[1]" placeholder="Serial" required>
-                        <input type="text" name="asset[1]" placeholder="Asset Number" required>
-                    </div>
-                </div>
-                <button type="button" onclick="addItem()">+</button>
-                <button type="submit">Submit</button>
-            </form>
         </section>
         <section id="documents"><h2>Documents and Accreditation</h2><p>View our certifications.</p></section>
         <section id="industries"><h2>Industries We Serve</h2><p>Wide industry coverage.</p></section>
