@@ -2,17 +2,20 @@ let itemCount = 1;
 
 function addItem() {
     itemCount++;
-    const template = document.getElementById('item-template');
-    const itemDiv = template.content.cloneNode(true).querySelector('.item-row');
-    itemDiv.setAttribute('data-item', itemCount);
-    itemDiv.querySelector('label').textContent = `Item ${itemCount}`;
-    const inputs = itemDiv.querySelectorAll('input, textarea');
-    inputs.forEach(input => {
-        const name = input.getAttribute('name').replace('[]', `[${itemCount}]`);
-        input.setAttribute('name', name);
-    });
-    itemDiv.classList.add('editable');
-    document.getElementById('items').appendChild(itemDiv);
+    const items = document.querySelectorAll('.item-row');
+    let nextItem = null;
+    for (let item of items) {
+        if (item.classList.contains('hidden') && parseInt(item.getAttribute('data-item')) === itemCount) {
+            nextItem = item;
+            break;
+        }
+    }
+    if (nextItem) {
+        nextItem.classList.remove('hidden');
+        nextItem.classList.add('editable');
+    } else {
+        console.warn('No more predefined items available');
+    }
 }
 
 function finalizeItem(itemDiv) {
@@ -34,7 +37,12 @@ function editItem(button) {
 
 function removeItem(button) {
     const row = button.parentElement;
-    row.remove();
+    row.classList.add('hidden');
+    row.classList.remove('editable');
+    const inputs = row.getElementsByTagName('input');
+    const textarea = row.getElementsByTagName('textarea')[0];
+    for (let input of inputs) input.value = '';
+    if (textarea) textarea.value = '';
 }
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
@@ -48,22 +56,7 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
             return;
         }
     });
-
-    // Log all form data before submission
-    const formData = new FormData(form);
-    const data = {};
-    for (let [name, value] of formData.entries()) {
-        if (name.includes('[')) {
-            const baseName = name.split('[')[0];
-            if (!data[baseName]) data[baseName] = [];
-            data[baseName].push(value || ''); // Ensure empty fields are included
-        } else {
-            data[name] = value;
-        }
-    }
-    console.log('Submitted Data:', data);
-
-    // Let Netlify handle submission natively
+    console.log('Form submitted, check Netlify Forms for data');
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
