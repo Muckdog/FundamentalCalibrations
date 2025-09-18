@@ -53,62 +53,21 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
         }
     });
 
-    // Collect all form data from DOM
+    // Log all form data before submission
     const formData = new FormData(form);
-    const data = {
-        name: form.querySelector('input[name="name"]').value,
-        company: form.querySelector('input[name="company"]').value,
-        phone: form.querySelector('input[name="phone"]').value,
-        email: form.querySelector('input[name="email"]').value
-    };
-    data.manufacturer = [];
-    data.model = [];
-    data.serial = [];
-    data.asset = [];
-    data.notes = [];
-
-    items.forEach(item => {
-        const itemNum = item.getAttribute('data-item');
-        data.manufacturer.push(form.querySelector(`input[name="manufacturer[${itemNum}]"]`).value);
-        data.model.push(form.querySelector(`input[name="model[${itemNum}]"]`).value);
-        data.serial.push(form.querySelector(`input[name="serial[${itemNum}]"]`).value);
-        data.asset.push(form.querySelector(`input[name="asset[${itemNum}]"]`).value);
-        data.notes.push(form.querySelector(`textarea[name="notes[${itemNum}]"]`).value);
-    });
-
-    // Log data for debugging
-    console.log('Submitted Data:', data);
-
-    // Convert to URL-encoded format
-    const params = new URLSearchParams();
-    for (let key in data) {
-        if (Array.isArray(data[key])) {
-            data[key].forEach((value, index) => {
-                params.append(key, value);
-            });
+    const data = {};
+    for (let [name, value] of formData.entries()) {
+        if (name.includes('[')) {
+            const baseName = name.split('[')[0];
+            if (!data[baseName]) data[baseName] = [];
+            data[baseName].push(value);
         } else {
-            params.append(key, data[key]);
+            data[name] = value;
         }
     }
+    console.log('Submitted Data:', data);
 
-    fetch('/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: params.toString()
-    }).then(response => {
-        console.log('Response:', response);
-        return response.text();
-    }).then(text => {
-        console.log('Response Text:', text);
-        alert('Quote submitted! Check your email.');
-    }).catch(error => {
-        console.error('Error:', error);
-        alert('Error submitting.');
-    });
-
-    // Fallback to default form submission for Netlify
+    // Allow Netlify to handle the submission natively
     form.submit();
 });
 
