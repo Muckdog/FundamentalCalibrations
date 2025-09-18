@@ -43,7 +43,7 @@ function removeItem(button) {
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    const form = e.target;
+    const form = document.querySelector('form[name="quoteForm"]');
     const items = document.querySelectorAll('.item-row');
     items.forEach(item => {
         if (item.classList.contains('editable')) {
@@ -52,9 +52,29 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
             return;
         }
     });
+
+    // Collect all form data manually to ensure all items are included
+    const formData = new FormData(form);
+    const data = {};
+    for (let [name, value] of formData.entries()) {
+        if (!data[name]) data[name] = [];
+        data[name].push(value);
+    }
+
+    // Convert to URL-encoded format for Netlify
+    const params = new URLSearchParams();
+    for (let key in data) {
+        data[key].forEach((value, index) => {
+            params.append(key, value);
+        });
+    }
+
     fetch('/', {
         method: 'POST',
-        body: new FormData(form)
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: params.toString()
     }).then(() => alert('Quote submitted! Check your email.')).catch(() => alert('Error submitting.'));
 });
 
