@@ -13,19 +13,24 @@
         src: url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap') format('woff2');
     }
     body {
-        @apply bg-gray-100 text-gray-800 font-lato;
+        @apply bg-gray-200 text-gray-800;
     }
 }
 
 @layer components {
     .service-card {
-        @apply bg-white p-6 rounded-lg shadow-md text-center;
+        @apply bg-white p-6 rounded-lg shadow-md text-center relative group;
     }
     .feature-block {
-        @apply my-10;
+        @apply my-10 py-6;
     }
     .feature-container {
-        @apply bg-orange-500 text-white py-6 px-4 grid grid-cols-4 gap-4 w-full mx-auto max-w-5xl;
+        @apply bg-[#F97316] text-white py-8 px-4 grid grid-cols-4 gap-6 w-full left-0;
+        position: relative;
+        width: 100vw;
+        margin-left: -50vw;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .feature-item {
         @apply text-center;
@@ -39,15 +44,6 @@
     .payment-options i {
         @apply text-xl mr-2;
     }
-}
-
-/* Custom positioning for full-width orange block */
-.feature-container {
-    width: 100vw;
-    margin-left: -50vw;
-    left: 50%;
-    position: relative;
-    transform: translateX(-50%);
 }
 
 /* Responsive Adjustments */
