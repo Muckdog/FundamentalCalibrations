@@ -48,8 +48,22 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
             return;
         }
     });
+
+    // Log all form data before submission
+    const formData = new FormData(form);
+    const data = {};
+    for (let [name, value] of formData.entries()) {
+        if (name.includes('[')) {
+            const baseName = name.split('[')[0];
+            if (!data[baseName]) data[baseName] = [];
+            data[baseName].push(value || ''); // Ensure empty fields are included
+        } else {
+            data[name] = value;
+        }
+    }
+    console.log('Submitted Data:', data);
+
     // Let Netlify handle submission natively
-    console.log('Form submitted, check Netlify Forms for data');
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
