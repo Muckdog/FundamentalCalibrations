@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental Calibrations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#services" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="#request-quote">Request a Quote</a>
+                        <a href="#documents">Documents and Accreditation</a>
+                        <a href="#industries">Industries We Serve</a>
+                    </div>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Welcome</h2>
+            <p>Calibration services made simple.</p>
+        </section>
+        <section id="request-quote">
+            <h2>Request a Quote</h2>
+            <form id="quoteForm">
+                <input type="text" placeholder="Name" required><br>
+                <input type="text" placeholder="Company Name" required><br>
+                <input type="tel" placeholder="Phone" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <div id="items"></div>
+                <button type="button" onclick="addItem()">+</button>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="documents"><h2>Documents and Accreditation</h2><p>View our certifications.</p></section>
+        <section id="industries"><h2>Industries We Serve</h2><p>Wide industry coverage.</p></section>
+        <section id="about"><h2>About Us</h2><p>Top-tier calibration experts.</p></section>
+        <section id="contact"><h2>Contact</h2><p>Email: info@fundamentalcalibrations.com</p></section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Fundamental Calibrations</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

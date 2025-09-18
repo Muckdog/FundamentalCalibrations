@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+header {
+    background: #1BB687;
+    padding: 1em;
+    position: sticky;
+    top: 0;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 1em;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: #ddd;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #1BB687;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background: #fb7459;
+}
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+section {
+    margin-bottom: 20px;
+    border: 2px solid #fb7459;
+    padding: 10px;
+}
+footer {
+    background: #1BB687;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+#quoteForm input {
+    display: block;
+    margin: 10px 0;
+    padding: 5px;
+    width: 100%;
+}
+.item-row {
+    border: 1px solid #fb7459;
+    padding: 10px;
+    margin: 10px 0;
+    background: #f9f9f9;
+}
+.item-row input {
+    margin: 5px 0;
+    width: 23%;
+}
+.item-row button {
+    margin: 0 5px;
+}
