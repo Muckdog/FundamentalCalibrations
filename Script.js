@@ -12,6 +12,7 @@ function addItem() {
         <input type="text" name="model[${itemCount}]" placeholder="Model" required>
         <input type="text" name="serial[${itemCount}]" placeholder="Serial" required>
         <input type="text" name="asset[${itemCount}]" placeholder="Asset Number" required>
+        <textarea name="notes[${itemCount}]" placeholder="Additional notes about the item" maxlength="500"></textarea>
     `;
     itemsDiv.appendChild(itemDiv);
 }
@@ -60,9 +61,11 @@ document.addEventListener('input', (e) => {
     const firstItem = document.querySelector('.item-row[data-item="1"]');
     if (firstItem && !firstItem.classList.contains('editable')) return;
     const inputs = firstItem.getElementsByTagName('input');
+    const textarea = firstItem.getElementsByTagName('textarea')[0];
     let allFilled = true;
     for (let input of inputs) {
         if (!input.value.trim()) allFilled = false;
     }
+    if (!textarea.value.trim()) allFilled = false;
     if (allFilled && firstItem) finalizeItem(firstItem);
 });
