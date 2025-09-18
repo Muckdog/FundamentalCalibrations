@@ -13,7 +13,7 @@ function addItem() {
     if (nextItem) {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
-        nextItem.querySelector('label').textContent = `Item ${itemCount}`;
+        nextItem.querySelector('label').textContent = `Item ${itemCount}`; // Ensure item number updates
         // Add delete button immediately for new items
         finalizeItem(nextItem);
     } else {
@@ -46,7 +46,8 @@ function removeItem(button) {
     }
 }
 
-document.getElementById('quoteForm').addEventListener('submit', (e) => {
+// Client-side validation to alert user before submission
+document.addEventListener('submit', (e) => {
     const items = document.querySelectorAll('.item-row');
     let hasEditable = false;
     items.forEach(item => {
@@ -60,7 +61,6 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
     } else {
         console.log('Form submitted to Netlify.');
     }
-    // Do not preventDefault unless editable items exist; Netlify handles the rest
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
