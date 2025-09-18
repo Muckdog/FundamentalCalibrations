@@ -46,23 +46,20 @@ function removeItem(button) {
     }
 }
 
-// Client-side validation (alert if editable items exist when submitting)
-document.addEventListener('submit', (e) => {
+// Client-side validation on input to guide users
+document.addEventListener('input', (e) => {
+    const form = document.querySelector('form[name="quoteForm"]');
     const items = document.querySelectorAll('.item-row');
     let hasEditable = false;
     items.forEach(item => {
-        if (item.classList.contains('editable')) {
+        if (item.classList.contains('editable') && item.querySelectorAll('input, textarea').length === item.querySelectorAll('input[value], textarea[value]').length) {
             hasEditable = true;
         }
     });
-    if (hasEditable) {
+    if (hasEditable && form.checkValidity()) {
         alert('Please finalize all items before submitting.');
-        e.preventDefault();
     }
-});
-
-// Ensure Item 1 finalizes on input if all fields are filled
-document.addEventListener('input', (e) => {
+    // Ensure Item 1 finalizes if all fields are filled
     const firstItem = document.querySelector('.item-row[data-item="1"]');
     if (firstItem && !firstItem.classList.contains('editable')) return;
     const inputs = firstItem.getElementsByTagName('input');
