@@ -2,21 +2,17 @@ let itemCount = 1;
 
 function addItem() {
     itemCount++;
-    const itemsDiv = document.getElementById('items');
-    const itemDiv = document.createElement('div');
-    itemDiv.className = 'item-row editable';
+    const template = document.getElementById('item-template');
+    const itemDiv = template.content.cloneNode(true).querySelector('.item-row');
     itemDiv.setAttribute('data-item', itemCount);
-    itemDiv.innerHTML = `
-        <label>Item ${itemCount}</label>
-        <input type="text" name="manufacturer[${itemCount}]" placeholder="Manufacturer" required>
-        <input type="text" name="model[${itemCount}]" placeholder="Model" required>
-        <input type="text" name="serial[${itemCount}]" placeholder="Serial" required>
-        <input type="text" name="asset[${itemCount}]" placeholder="Asset Number" required>
-        <div class="note-box">
-            <textarea name="notes[${itemCount}]" placeholder="Additional notes about the item" maxlength="500"></textarea>
-        </div>
-    `;
-    itemsDiv.appendChild(itemDiv);
+    itemDiv.querySelector('label').textContent = `Item ${itemCount}`;
+    const inputs = itemDiv.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        const name = input.getAttribute('name').replace('[]', `[${itemCount}]`);
+        input.setAttribute('name', name);
+    });
+    itemDiv.classList.add('editable');
+    document.getElementById('items').appendChild(itemDiv);
 }
 
 function finalizeItem(itemDiv) {
@@ -42,33 +38,18 @@ function removeItem(button) {
 }
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
-    e.preventDefault();
     const form = document.querySelector('form[name="quoteForm"]');
     const items = document.querySelectorAll('.item-row');
     items.forEach(item => {
         if (item.classList.contains('editable')) {
             alert('Please finalize all items before submitting.');
+            e.preventDefault();
             e.stopPropagation();
             return;
         }
     });
-
-    // Log all form data before submission
-    const formData = new FormData(form);
-    const data = {};
-    for (let [name, value] of formData.entries()) {
-        if (name.includes('[')) {
-            const baseName = name.split('[')[0];
-            if (!data[baseName]) data[baseName] = [];
-            data[baseName].push(value);
-        } else {
-            data[name] = value;
-        }
-    }
-    console.log('Submitted Data:', data);
-
-    // Allow Netlify to handle the submission natively
-    form.submit();
+    // Let Netlify handle submission natively
+    console.log('Form submitted, check Netlify Forms for data');
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
