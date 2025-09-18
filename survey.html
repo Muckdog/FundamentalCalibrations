@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey - Fundamental Calibrations</title>
+    <meta name="description" content="Take our customer satisfaction survey for Fundamental Calibrations. Share feedback on our calibration services.">
+    <meta name="keywords" content="customer survey, feedback, calibration services, satisfaction">
+    <meta property="og:title" content="Survey - Fundamental Calibrations">
+    <meta property="og:description" content="Provide feedback on our 30-year calibration expertise.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://yourdomain.com/survey.html">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Replace with your kit -->
+</head>
+<body class="bg-gray-100 text-gray-800 font-lato">
+    <header class="bg-green-600 sticky top-0 z-10 shadow-md">
+        <nav class="container mx-auto p-4" role="navigation" aria-label="Main navigation">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="index.html" class="text-white hover:text-gray-200" aria-label="Home">Home</a></li>
+                <li class="relative group">
+                    <a href="#" class="text-white hover:text-gray-200" aria-haspopup="true">Services</a>
+                    <div class="absolute hidden group-hover:block bg-green-700 mt-2 w-40 rounded-md shadow-lg">
+                        <a href="services.html" class="block px-4 py-2 text-white hover:bg-green-600" aria-label="Services">Services</a>
+                        <a href="quote.html" class="block px-4 py-2 text-white hover:bg-green-600" aria-label="Request a Quote">Request a Quote</a>
+                    </div>
+                </li>
+                <li><a href="about.html" class="text-white hover:text-gray-200" aria-label="About">About</a></li>
+                <li><a href="contact.html" class="text-white hover:text-gray-200" aria-label="Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container mx-auto py-6">
+        <section id="survey" class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+            <h2 class="text-3xl font-oswald text-green-600 mb-4 text-center">Customer Satisfaction Survey</h2>
+            <form name="surveyForm" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                <input type="hidden" name="form-name" value="surveyForm">
+                <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
+                <div>
+                    <label for="satisfaction" class="block text-left">How satisfied are you with our services? (1-5)</label>
+                    <select name="satisfaction" id="satisfaction" required class="w-full p-2 rounded" loading="lazy">
+                        <option value="">Select</option>
+                        <option value="1">1 - Very Dissatisfied</option>
+                        <option value="2">2 - Dissatisfied</option>
+                        <option value="3">3 - Neutral</option>
+                        <option value="4">4 - Satisfied</option>
+                        <option value="5">5 - Very Satisfied</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="feedback" class="block text-left">Additional Feedback</label>
+                    <textarea name="feedback" id="feedback" placeholder="Share your thoughts" class="w-full p-2 rounded" rows="4" loading="lazy"></textarea>
+                </div>
+                <button type="submit" class="px-4 py-3 bg-green-600 text-white rounded hover:bg-green-700" aria-label="Submit survey">Submit Survey</button>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-green-800 text-white text-center py-4">
+        <p>&copy; 2025 Fundamental Calibrations | <a href="about.html" class="text-gray-200 hover:underline" aria-label="About page">About</a> | <a href="services.html" class="text-gray-200 hover:underline" aria-label="Services page">Services</a> | <a href="contact.html" class="text-gray-200 hover:underline" aria-label="Contact page">Contact</a> | <a href="privacy-policy.html" class="text-gray-200 hover:underline" aria-label="Privacy Policy">Privacy Policy</a> | <a href="terms-of-service.html" class="text-gray-200 hover:underline" aria-label="Terms of Service">Terms of Service</a></p>
+        <div class="payment-options mt-2">
+            <i class="fab fa-cc-visa text-xl mr-2" aria-label="Visa accepted"></i>
+            <i class="fab fa-cc-mastercard text-xl mr-2" aria-label="MasterCard accepted"></i>
+            <i class="fab fa-cc-amex text-xl mr-2" aria-label="American Express accepted"></i>
+            <i class="fab fa-cc-discover text-xl" aria-label="Discover accepted"></i>
+        </div>
+    </footer>
+</body>
+</html>
