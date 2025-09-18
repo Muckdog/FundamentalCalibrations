@@ -13,7 +13,7 @@ function addItem() {
     if (nextItem) {
         nextItem.classList.remove('hidden');
         nextItem.classList.add('editable');
-        nextItem.querySelector('label').textContent = `Item ${itemCount}`; // Ensure item number updates
+        nextItem.querySelector('label').textContent = `Item ${itemCount}`;
         // Add delete button immediately for new items
         finalizeItem(nextItem);
     } else {
@@ -52,17 +52,15 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
     items.forEach(item => {
         if (item.classList.contains('editable')) {
             hasEditable = true;
-            console.log('Editable item detected:', item.getAttribute('data-item'));
         }
     });
     if (hasEditable) {
         alert('Please finalize all items before submitting.');
         e.preventDefault();
-        console.log('Submission prevented due to editable items.');
     } else {
-        console.log('Form submitted to Netlify, no editable items found.');
+        console.log('Form submitted to Netlify.');
     }
-    // Netlify should handle submission if no prevention occurs
+    // Do not preventDefault unless editable items exist; Netlify handles the rest
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
