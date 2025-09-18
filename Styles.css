@@ -1,3 +1,4 @@
+/* styles.css */
 body {
     margin: 0;
     padding: 0;
@@ -61,9 +62,6 @@ section {
     border: 2px solid #fb7459;
     padding: 10px;
 }
-#request-quote h2 {
-    text-align: center;
-}
 footer {
     background: #1BB687;
     color: white;
@@ -73,62 +71,22 @@ footer {
     bottom: 0;
     width: 100%;
 }
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-.form-group input {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid #fb7459;
-    border-radius: 5px;
-    font-size: 16px;
-    box-sizing: border-box;
+#quoteForm input {
+    display: block;
+    margin: 10px 0;
+    padding: 5px;
+    width: 100%;
 }
 .item-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 10px 0;
-    padding: 10px;
     border: 1px solid #fb7459;
+    padding: 10px;
+    margin: 10px 0;
     background: #f9f9f9;
 }
-.item-row.hidden {
-    display: none;
-}
-.item-row label {
-    flex: 0 0 100%;
-}
-.item-row input[type="text"] {
-    flex: 1 1 20%;
+.item-row input {
     margin: 5px 0;
-    padding: 5px;
-    border: 1px solid #fb7459;
-    border-radius: 3px;
+    width: 23%;
 }
 .item-row button {
     margin: 0 5px;
-}
-.note-box {
-    flex: 0 0 100%;
-    margin: 10px 0;
-}
-.note-box label {
-    display: none;
-}
-.note-box textarea {
-    width: 100%;
-    height: 50px;
-    resize: none;
-    overflow-y: auto;
-    border: 1px solid #fb7459;
-    padding: 5px;
-    box-sizing: border-box;
-}
-.hidden {
-    display: none;
 }
