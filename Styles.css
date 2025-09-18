@@ -61,9 +61,6 @@ section {
     border: 2px solid #fb7459;
     padding: 10px;
 }
-#request-quote h2 {
-    text-align: center;
-}
 footer {
     background: #1BB687;
     color: white;
@@ -72,6 +69,9 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+#request-quote h2 {
+    text-align: center;
 }
 .form-group {
     display: flex;
@@ -102,6 +102,7 @@ footer {
 }
 .item-row label {
     flex: 0 0 100%;
+    text-align: center;
 }
 .item-row input[type="text"] {
     flex: 1 1 20%;
@@ -128,6 +129,19 @@ footer {
     border: 1px solid #fb7459;
     padding: 5px;
     box-sizing: border-box;
+}
+#quoteForm button[type="button"], #quoteForm button[type="submit"] {
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #1BB687;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+}
+#quoteForm button[type="button"]:hover, #quoteForm button[type="submit"]:hover {
+    background: #fb7459;
 }
 .hidden {
     display: none;
