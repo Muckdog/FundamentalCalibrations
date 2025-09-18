@@ -52,15 +52,17 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
     items.forEach(item => {
         if (item.classList.contains('editable')) {
             hasEditable = true;
+            console.log('Editable item detected:', item.getAttribute('data-item'));
         }
     });
     if (hasEditable) {
         alert('Please finalize all items before submitting.');
         e.preventDefault();
+        console.log('Submission prevented due to editable items.');
     } else {
-        console.log('Form submitted to Netlify.');
+        console.log('Form submitted to Netlify, no editable items found.');
     }
-    // Always allow Netlify to process the submission (no unconditional preventDefault)
+    // Netlify should handle submission if no prevention occurs
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
