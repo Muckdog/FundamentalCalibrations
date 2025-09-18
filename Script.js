@@ -67,13 +67,13 @@ document.getElementById('quoteForm').addEventListener('submit', (e) => {
             hasEditable = true;
         }
     });
-    if (hasEditable) {
+    if (!hasEditable) {
+        console.log('Form submitted, check Netlify Forms for data');
+    } else {
         alert('Please finalize all items before submitting.');
         e.preventDefault();
-    } else {
-        console.log('Form submitted, check Netlify Forms for data');
-        // Let Netlify handle submission natively
     }
+    // Netlify will handle submission if no prevention occurs
 });
 
 // Ensure Item 1 finalizes on input if all fields are filled
