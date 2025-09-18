@@ -1,32 +1,70 @@
-/* script.js */
+// script.js
 let itemCount = 1;
 
 function addItem() {
-    const itemsDiv = document.getElementById('items');
-    const itemDiv = document.createElement('div');
-    itemDiv.className = 'item-row';
-    itemDiv.innerHTML = `
-        <input type="text" placeholder="Manufacturer" required>
-        <input type="text" placeholder="Model" required>
-        <input type="text" placeholder="Serial" required>
-        <input type="text" placeholder="Asset Number" required>
+    itemCount++;
+    const items = document.querySelectorAll('.item-row');
+    let nextItem = null;
+    for (let item of items) {
+        if (item.classList.contains('hidden') && parseInt(item.getAttribute('data-item')) === itemCount) {
+            nextItem = item;
+            break;
+        }
+    }
+    if (nextItem) {
+        nextItem.classList.remove('hidden');
+        nextItem.classList.add('editable');
+    } else {
+        console.warn('No more predefined items available. Maximum reached (50).');
+    }
+}
+
+function finalizeItem(itemDiv) {
+    itemDiv.classList.remove('editable');
+    itemDiv.innerHTML += `
         <button type="button" onclick="editItem(this)">Edit</button>
         <button type="button" onclick="removeItem(this)">-</button>
     `;
-    itemsDiv.appendChild(itemDiv);
 }
 
 function editItem(button) {
     const row = button.parentElement;
-    row.classList.toggle('editable');
+    if (!row.classList.contains('editable')) {
+        row.classList.add('editable');
+        const buttons = row.getElementsByTagName('button');
+        for (let btn of buttons) btn.remove();
+    }
 }
 
 function removeItem(button) {
     const row = button.parentElement;
-    row.remove();
+    if (parseInt(row.getAttribute('data-item')) > 1) {
+        row.classList.add('hidden');
+        row.classList.remove('editable');
+        const inputs = row.getElementsByTagName('input');
+        const textarea = row.getElementsByTagName('textarea')[0];
+        for (let input of inputs) input.value = '';
+        if (textarea) textarea.value = '';
+    } else {
+        alert('Item 1 cannot be deleted.');
+    }
 }
 
 document.getElementById('quoteForm').addEventListener('submit', (e) => {
     e.preventDefault();
     alert('Quote submitted! Data will be processed.');
+});
+
+// Ensure Item 1 finalizes on input if all fields are filled
+document.addEventListener('input', (e) => {
+    const firstItem = document.querySelector('.item-row[data-item="1"]');
+    if (firstItem && !firstItem.classList.contains('editable')) return;
+    const inputs = firstItem.getElementsByTagName('input');
+    const textarea = firstItem.getElementsByTagName('textarea')[0];
+    let allFilled = true;
+    for (let input of inputs) {
+        if (!input.value.trim()) allFilled = false;
+    }
+    if (!textarea.value.trim()) allFilled = false;
+    if (allFilled && firstItem) finalizeItem(firstItem);
 });
