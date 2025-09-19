@@ -14,12 +14,9 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         .diamond {
-            position: relative;
-            width: 200px;
-            height: 200px;
+            position: absolute;
             transform: rotate(45deg);
             overflow: hidden;
-            margin: 0 10px;
             image-rendering: -webkit-optimize-contrast;
         }
         .diamond img {
@@ -33,10 +30,10 @@
             image-rendering: pixelated;
         }
         .diamond-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            flex-wrap: wrap;
+            position: relative;
+            width: 500px;
+            height: 400px;
+            margin-left: auto;
         }
         .gradient-overlay {
             position: absolute;
@@ -44,10 +41,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to left, rgba(26, 60, 52, 0) 0%, rgba(26, 60, 52, 0.8) 100%);
+            background: linear-gradient(to left, rgba(26, 60, 52, 0) 0%, rgba(26, 60, 52, 0.3) 100%);
             z-index: 1;
         }
-        .diamond-text {
+        .diamond-text, .diamond-button {
             position: absolute;
             top: 50%;
             left: 10px;
@@ -58,12 +55,51 @@
             font-weight: bold;
             text-align: left;
         }
+        .diamond-button {
+            background-color: #15803d; /* Green-600 from Tailwind */
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .diamond-button:hover {
+            background-color: #166534; /* Darker green on hover */
+        }
+        .diamond-1 {
+            top: 0;
+            left: 150px;
+            width: 200px;
+            height: 200px;
+        }
+        .diamond-2 {
+            top: 150px;
+            left: 50px;
+            width: 250px;
+            height: 250px;
+        }
+        .diamond-3 {
+            top: 150px;
+            left: 250px;
+            width: 250px;
+            height: 250px;
+        }
         @media (max-width: 768px) {
             .diamond-container {
-                justify-content: center;
+                margin: 0 auto;
+                width: 300px;
+                height: 500px;
             }
-            .diamond {
-                margin: 10px 0;
+            .diamond-1 {
+                top: 0;
+                left: 50px;
+            }
+            .diamond-2 {
+                top: 150px;
+                left: 25px;
+            }
+            .diamond-3 {
+                top: 150px;
+                left: 125px;
             }
         }
     </style>
@@ -90,37 +126,29 @@
             <h1 class="text-4xl font-oswald text-green-600 mb-2">Welcome to Fundamental Calibrations</h1>
             <p class="text-lg">We have been perfecting calibration for 30 years with a passion for quality.</p>
             <p class="text-lg">As a veteran and family run outfit, we are committed to trust and delivering results.</p>
-            <a href="quote.html" class="mt-4 inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700" aria-label="Request a Quote">Get a Quote</a>
-            <div class="testimonial-spot mt-8 p-4 bg-white border-2 border-[#F97316] rounded-lg shadow-md">
-                <p class="text-lg italic">Testimonial Spot 1</p>
-            </div>
         </section>
         <div class="feature-block">
             <h2 class="text-3xl font-oswald text-green-600 text-center mb-4">A Look into Fundamental Calibrations</h2>
             <div class="relative flex items-center justify-between">
                 <div class="w-1/2 p-4 bg-green-600 text-white">
-                    <p class="text-lg">Our veteran-owned legacy drives precision and trust, serving PA, DE, and NJ with 30 years of expertise.</p>
+                    <p class="text-lg">Our veteran-owned legacy drives precision and trust, serving PA, DE, and NJ with 30 years of expertise. Founded by veterans, we bring discipline and dedication to every calibration, ensuring top-quality results. As a family-operated business, we prioritize personalized service, with multiple generations collaborating to meet your needs. Our commitment extends to offering affordable solutions and fast turnarounds, making us a reliable partner for businesses of all sizes across the tri-state area.</p>
+                    <p class="text-lg mt-2">We specialize in precision metrology, providing certified calibrations traceable to global standards. Our full-service care includes thorough cleaning and minor repairs to extend equipment life, while our expedited turnaround times keep your operations running smoothly. Whether you're a small startup or a large enterprise, we tailor our services to your unique challenges with unmatched attention to detail.</p>
                 </div>
                 <div class="diamond-container w-1/2">
-                    <div class="diamond" style="width: 200px; height: 200px;">
+                    <div class="diamond diamond-1">
                         <img src="original-C24113FC-2B34-41BF-8B04-9A2170642755.jpeg" alt="Veteran Owned" loading="lazy">
                         <div class="gradient-overlay"></div>
-                        <div class="diamond-text">Veteran Owned</div>
+                        <a href="quote.html" class="diamond-button" aria-label="Request a Quote">Request a Quote</a>
                     </div>
-                    <div class="diamond" style="width: 250px; height: 250px;">
-                        <img src="image2.png" alt="Tri-State Service" loading="lazy">
+                    <div class="diamond diamond-2">
+                        <img src="original-1DB5844C-728B-402F-8908-597E41F2729D.jpeg" alt="Tri-State Service" loading="lazy">
                         <div class="gradient-overlay"></div>
                         <div class="diamond-text">Tri-State Service</div>
                     </div>
-                    <div class="diamond" style="width: 300px; height: 300px;">
-                        <img src="image3.png" alt="30 Years Experience" loading="lazy">
+                    <div class="diamond diamond-3">
+                        <img src="original-6320DB52-070A-4999-A7F6-9F185FAB3C74.jpeg" alt="30 Years Experience" loading="lazy">
                         <div class="gradient-overlay"></div>
-                        <div class="diamond-text">30 Years Exp.</div>
-                    </div>
-                    <div class="diamond" style="width: 350px; height: 350px;">
-                        <img src="image4.png" alt="Fast Turnaround" loading="lazy">
-                        <div class="gradient-overlay"></div>
-                        <div class="diamond-text">Fast Turnaround</div>
+                        <div class="diamond-text">30 Years Experience</div>
                     </div>
                 </div>
             </div>
@@ -166,17 +194,6 @@
                 </div>
             </div>
         </div>
-        <div class="testimonial-spot mt-8 p-4 bg-white border-2 border-[#F97316] rounded-lg shadow-md">
-            <p class="text-lg italic">Testimonial Spot 2</p>
-        </div>
-        <section class="text-center my-6">
-            <p class="text-lg">Need help or more info?</p>
-            <a href="contact.html" class="mt-2 inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700" aria-label="Contact Us">Contact Us</a>
-            <p class="mt-2">sales@fundamentalcalibrations.com</p>
-            <div class="testimonial-spot mt-8 p-4 bg-white border-2 border-[#F97316] rounded-lg shadow-md">
-                <p class="text-lg italic">Testimonial Spot 3</p>
-            </div>
-        </section>
     </main>
     <footer class="bg-green-800 text-white text-center py-4">
         <p>&copy; 2025 Fundamental Calibrations | <a href="about.html" class="text-gray-200 hover:underline" aria-label="About page">About</a> | <a href="services.html" class="text-gray-200 hover:underline" aria-label="Services page">Services</a> | <a href="contact.html" class="text-gray-200 hover:underline" aria-label="Contact page">Contact</a> | <a href="privacy-policy.html" class="text-gray-200 hover:underline" aria-label="Privacy Policy">Privacy Policy</a> | <a href="terms-of-service.html" class="text-gray-200 hover:underline" aria-label="Terms of Service">Terms of Service</a></p>
