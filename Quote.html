@@ -60,9 +60,12 @@
         document.getElementById('quoteForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const form = this;
-            const formData = new FormData(form);
+            const submitButton = form.querySelector('.submit-button');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
 
             try {
+                const formData = new FormData(form);
                 const response = await fetch('/', {
                     method: 'POST',
                     body: formData
@@ -77,10 +80,13 @@
                         if (removeBtn) removeBtn.classList.add('hidden');
                     });
                 } else {
-                    alert('Submission failed. Please try again or contact support.');
+                    alert('Submission failed. Please check your input and try again or email sales@fundamentalcalibrations.com.');
                 }
             } catch (error) {
-                alert('An error occurred: ' + error.message + '. Please try again or contact support.');
+                alert('An error occurred: ' + error.message + '. Please try again or email sales@fundamentalcalibrations.com.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit';
             }
         });
     });
