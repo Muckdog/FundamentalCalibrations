@@ -31,8 +31,8 @@
         }
         .diamond-container {
             position: relative;
-            width: 600px; /* Increased to accommodate larger diamonds */
-            height: 700px; /* Increased to accommodate downward shift and new spacing */
+            width: 600px; /* Adjusted to fit zigzag pattern */
+            height: 900px; /* Increased to accommodate vertical spacing */
             margin-left: auto;
         }
         .gradient-overlay {
@@ -56,20 +56,20 @@
             text-align: left;
         }
         .diamond-1 {
-            top: 100px; /* Shifted down by 100px */
-            left: 155px; /* Shifted left slightly */
-            width: 290px;
-            height: 290px;
+            top: 50px; /* Start higher with spacing */
+            left: 230px; /* Right-aligned, left in zigzag */
+            width: 363px;
+            height: 363px;
         }
         .diamond-2 {
-            top: 280px; /* Adjusted for larger size and downward shift */
-            left: 60px; /* Shifted left slightly */
+            top: 450px; /* Spaced down */
+            left: 200px; /* Shifted further left in zigzag */
             width: 363px;
             height: 363px;
         }
         .diamond-3 {
-            top: 280px; /* Adjusted for larger size and downward shift */
-            left: 237px; /* Shifted left slightly */
+            top: 800px; /* Further down */
+            left: 230px; /* Back to left in zigzag */
             width: 363px;
             height: 363px;
         }
@@ -77,19 +77,19 @@
             .diamond-container {
                 margin: 0 auto;
                 width: 400px;
-                height: 900px;
+                height: 1100px;
             }
             .diamond-1 {
-                top: 100px;
-                left: 55px;
+                top: 50px;
+                left: 100px;
             }
             .diamond-2 {
-                top: 300px;
-                left: 18px;
+                top: 450px;
+                left: 70px;
             }
             .diamond-3 {
-                top: 300px;
-                left: 137px;
+                top: 800px;
+                left: 100px;
             }
         }
         .quote-section {
@@ -166,17 +166,17 @@
         <div class="mt-32"></div> <!-- Spacer to lower bottom half -->
         <h2 class="text-3xl font-oswald text-green-600 text-center mb-8">A Look into Fundamental Calibrations</h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 my-6">
-            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 600px;">
-                <img src="original-195CA4A6-81FB-4437-96D9-EBD566F17D0C.jpeg" alt="Unique Photo" class="w-full h-72 object-cover rounded-t-lg" loading="lazy">
+            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 300px;">
+                <img src="original-195CA4A6-81FB-4437-96D9-EBD566F17D0C.jpeg" alt="Unique Photo" class="w-full h-36 object-cover rounded-t-lg" loading="lazy">
             </div>
-            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 600px;">
+            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 300px;">
                 <h3 class="text-2xl font-oswald text-green-600">Affordable Options</h3>
                 <p>We keep costs low without cutting corners, perfect for any business looking to save while staying precise.</p>
                 <div class="absolute hidden group-hover:block bg-gray-800 text-white p-2 rounded shadow-lg mt-2 w-64 left-1/2 transform -translate-x-1/2 z-10">
                     <p>Cost effective solutions designed to fit your budget, making precision accessible for all sizes of businesses.</p>
                 </div>
             </div>
-            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 600px;">
+            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 300px;">
                 <h3 class="text-2xl font-oswald text-green-600">Fast Turnaround Times</h3>
                 <p>We know time is money, our quick calibrations get you back to work fast with expedited options if needed.</p>
                 <ul class="list-disc pl-5 mt-2">
@@ -187,7 +187,7 @@
                     <p>Lightning fast service with standard 48 hour turnarounds and expedited options, ensuring on time delivery.</p>
                 </div>
             </div>
-            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 600px;">
+            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 300px;">
                 <h3 class="text-2xl font-oswald text-green-600">Precision Calibration</h3>
                 <p>We are growing to meet your needs across PA, DE, and NJ, delivering spot on results with standards you can count on.</p>
                 <ul class="list-disc pl-5 mt-2">
