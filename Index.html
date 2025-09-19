@@ -31,8 +31,8 @@
         }
         .diamond-container {
             position: relative;
-            width: 500px;
-            height: 400px;
+            width: 600px; /* Increased to accommodate larger diamonds */
+            height: 700px; /* Increased to accommodate downward shift and new spacing */
             margin-left: auto;
         }
         .gradient-overlay {
@@ -44,63 +44,69 @@
             background: linear-gradient(to left, rgba(26, 60, 52, 0) 0%, rgba(26, 60, 52, 0.3) 100%);
             z-index: 1;
         }
-        .diamond-text, .diamond-button {
+        .diamond-text {
             position: absolute;
             top: 50%;
             left: 10px;
             transform: translateY(-50%) rotate(-45deg);
             color: white;
             z-index: 2;
-            font-size: 1.2rem;
+            font-size: 1.5rem; /* Increased font size for larger diamonds */
             font-weight: bold;
             text-align: left;
         }
-        .diamond-button {
-            background-color: #15803d; /* Green-600 from Tailwind */
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .diamond-button:hover {
-            background-color: #166534; /* Darker green on hover */
-        }
         .diamond-1 {
-            top: 0;
-            left: 150px;
-            width: 200px;
-            height: 200px;
+            top: 100px; /* Shifted down by 100px */
+            left: 155px; /* Shifted left slightly */
+            width: 290px;
+            height: 290px;
         }
         .diamond-2 {
-            top: 150px;
-            left: 50px;
-            width: 250px;
-            height: 250px;
+            top: 280px; /* Adjusted for larger size and downward shift */
+            left: 60px; /* Shifted left slightly */
+            width: 363px;
+            height: 363px;
         }
         .diamond-3 {
-            top: 150px;
-            left: 250px;
-            width: 250px;
-            height: 250px;
+            top: 280px; /* Adjusted for larger size and downward shift */
+            left: 237px; /* Shifted left slightly */
+            width: 363px;
+            height: 363px;
         }
         @media (max-width: 768px) {
             .diamond-container {
                 margin: 0 auto;
-                width: 300px;
-                height: 500px;
+                width: 400px;
+                height: 900px;
             }
             .diamond-1 {
-                top: 0;
-                left: 50px;
+                top: 100px;
+                left: 55px;
             }
             .diamond-2 {
-                top: 150px;
-                left: 25px;
+                top: 300px;
+                left: 18px;
             }
             .diamond-3 {
-                top: 150px;
-                left: 125px;
+                top: 300px;
+                left: 137px;
             }
+        }
+        .quote-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .quote-button {
+            background-color: #15803d; /* Green-600 from Tailwind */
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.25rem;
+        }
+        .quote-button:hover {
+            background-color: #166534; /* Darker green on hover */
         }
     </style>
 </head>
@@ -127,8 +133,12 @@
             <p class="text-lg">We have been perfecting calibration for 30 years with a passion for quality.</p>
             <p class="text-lg">As a veteran and family run outfit, we are committed to trust and delivering results.</p>
         </section>
+        <div class="mt-16"></div> <!-- Increased spacing between welcome and quote section -->
         <div class="feature-block">
-            <h2 class="text-3xl font-oswald text-green-600 text-center mb-4">A Look into Fundamental Calibrations</h2>
+            <div class="quote-section">
+                <h2 class="text-2xl font-oswald text-green-600 mb-4">Looking for a Quote? Request One Here!</h2>
+                <a href="quote.html" class="quote-button" aria-label="Request a Quote">Request a Quote</a>
+            </div>
             <div class="relative flex items-center justify-between">
                 <div class="w-1/2 p-4 bg-green-600 text-white">
                     <p class="text-lg">Our veteran-owned legacy drives precision and trust, serving PA, DE, and NJ with 30 years of expertise. Founded by veterans, we bring discipline and dedication to every calibration, ensuring top-quality results. As a family-operated business, we prioritize personalized service, with multiple generations collaborating to meet your needs. Our commitment extends to offering affordable solutions and fast turnarounds, making us a reliable partner for businesses of all sizes across the tri-state area.</p>
@@ -138,7 +148,7 @@
                     <div class="diamond diamond-1">
                         <img src="original-C24113FC-2B34-41BF-8B04-9A2170642755.jpeg" alt="Veteran Owned" loading="lazy">
                         <div class="gradient-overlay"></div>
-                        <a href="quote.html" class="diamond-button" aria-label="Request a Quote">Request a Quote</a>
+                        <div class="diamond-text">Veteran Owned</div>
                     </div>
                     <div class="diamond diamond-2">
                         <img src="original-1DB5844C-728B-402F-8908-597E41F2729D.jpeg" alt="Tri-State Service" loading="lazy">
@@ -153,15 +163,20 @@
                 </div>
             </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg">
+        <div class="mt-32"></div> <!-- Spacer to lower bottom half -->
+        <h2 class="text-3xl font-oswald text-green-600 text-center mb-8">A Look into Fundamental Calibrations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 my-6">
+            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 600px;">
+                <img src="original-195CA4A6-81FB-4437-96D9-EBD566F17D0C.jpeg" alt="Unique Photo" class="w-full h-72 object-cover rounded-t-lg" loading="lazy">
+            </div>
+            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 600px;">
                 <h3 class="text-2xl font-oswald text-green-600">Affordable Options</h3>
                 <p>We keep costs low without cutting corners, perfect for any business looking to save while staying precise.</p>
                 <div class="absolute hidden group-hover:block bg-gray-800 text-white p-2 rounded shadow-lg mt-2 w-64 left-1/2 transform -translate-x-1/2 z-10">
                     <p>Cost effective solutions designed to fit your budget, making precision accessible for all sizes of businesses.</p>
                 </div>
             </div>
-            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg">
+            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 600px;">
                 <h3 class="text-2xl font-oswald text-green-600">Fast Turnaround Times</h3>
                 <p>We know time is money, our quick calibrations get you back to work fast with expedited options if needed.</p>
                 <ul class="list-disc pl-5 mt-2">
@@ -172,16 +187,7 @@
                     <p>Lightning fast service with standard 48 hour turnarounds and expedited options, ensuring on time delivery.</p>
                 </div>
             </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg">
-                <h3 class="text-2xl font-oswald text-green-600">Full Service Care</h3>
-                <p>We do not just calibrate, we clean your gear thoroughly and handle minor fixes to keep it in top shape with a focus on safety and care.</p>
-                <div class="absolute hidden group-hover:block bg-gray-800 text-white p-2 rounded shadow-lg mt-2 w-64 left-1/2 transform -translate-x-1/2 z-10">
-                    <p>Meticulous cleaning and minor repairs to ensure safety and extend equipment life, saving you time and effort.</p>
-                </div>
-            </div>
-            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg">
+            <div class="service-card bg-white relative group border-2 border-[#F97316] rounded-lg" style="height: 600px;">
                 <h3 class="text-2xl font-oswald text-green-600">Precision Calibration</h3>
                 <p>We are growing to meet your needs across PA, DE, and NJ, delivering spot on results with standards you can count on.</p>
                 <ul class="list-disc pl-5 mt-2">
