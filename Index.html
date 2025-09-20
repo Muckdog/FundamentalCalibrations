@@ -4,15 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamental Calibrations</title>
-    <meta name="description" content="Veteran and family owned calibration services with 30 years of expertise. Precision metrology for PA, DE, NJ. Request a quote today.">
-    <meta name="keywords" content="calibration services, metrology, veteran owned, precision, Pennsylvania, Delaware, New Jersey">
+    <meta name="description" content="Veteran and family-owned calibration services with 30 years of expertise. Precision metrology for PA, DE, NJ. Request a quote today.">
     <meta property="og:title" content="Fundamental Calibrations - Precision Calibration Services">
     <meta property="og:description" content="30 years of expertise in metrology. Serving PA, DE, NJ with quality calibration solutions.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yourdomain.com/images/hero-calibration-equipment.webp">
     <link rel="canonical" href="https://yourdomain.com">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Fundamental Calibrations",
+      "description": "Veteran and family-owned calibration services with 30 years of expertise in PA, DE, NJ.",
+      "url": "https://yourdomain.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pennsylvania",
+        "addressCountry": "USA"
+      },
+      "telephone": "+1-123-456-7890",
+      "openingHours": "Mo-Fr 09:00-17:00"
+    }
+    </script>
     <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+        }
         .hero {
             position: relative;
             height: 400px;
@@ -22,7 +45,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(60%); /* Slightly darker for better contrast */
+            filter: brightness(60%);
         }
         .hero-content {
             position: absolute;
@@ -30,9 +53,9 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: #f5f5f5; /* Off-white for better readability */
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Shadow for contrast */
-            background: rgba(0, 0, 0, 0.4); /* Darker overlay behind text */
+            color: #FFFFFF; /* Clean White */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.4);
             padding: 1rem 2rem;
             border-radius: 0.5rem;
         }
@@ -41,13 +64,26 @@
             overflow: hidden;
             transition: transform 0.3s;
         }
-        .service-card:hover {
+        .service-card:hover, .service-card:focus-within {
             transform: translateY(-5px);
         }
         .service-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+        }
+        .service-title {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26, 154, 154, 0.7); /* Vibrant Teal with opacity */
+            color: #FFFFFF; /* Clean White */
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.25rem;
+            text-align: center;
         }
         .service-overlay {
             position: absolute;
@@ -56,7 +92,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
-            color: white;
+            color: #FFFFFF; /* Clean White */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -64,7 +100,7 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-        .service-card:hover .service-overlay {
+        .service-card:hover .service-overlay, .service-card:focus-within .service-overlay {
             opacity: 1;
         }
         @media (max-width: 768px) {
@@ -77,75 +113,84 @@
             .hero-content {
                 padding: 0.5rem 1rem;
             }
+            .service-title {
+                font-size: 1rem;
+                padding: 0.3rem 0.6rem;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-200 text-gray-800 font-lato">
-    <header class="bg-green-600 sticky top-0 z-10 shadow-md">
+<body class="bg-f4c7ab text-4a4e55"> <!-- Soft Peach background, Slate Gray text -->
+    <header class="bg-1a9a9a sticky top-0 z-10 shadow-md"> <!-- Vibrant Teal header -->
         <nav class="container mx-auto p-4" role="navigation" aria-label="Main navigation">
             <ul class="flex justify-center space-x-6">
-                <li><a href="#home" class="text-white hover:text-gray-200" aria-label="Home">Home</a></li>
-                <li><a href="services.html" class="text-white hover:text-gray-200" aria-label="Services">Services</a></li>
-                <li><a href="about.html" class="text-white hover:text-gray-200" aria-label="About">About</a></li>
-                <li><a href="contact.html" class="text-white hover:text-gray-200" aria-label="Contact">Contact</a></li>
-                <li><a href="quote.html" class="text-white hover:text-gray-200 font-bold" aria-label="Request a Quote">Request a Quote</a></li>
+                <li><a href="#home" class="text-ffffff hover:text-f4c7ab" aria-label="Home">Home</a></li>
+                <li><a href="services.html" class="text-ffffff hover:text-f4c7ab" aria-label="Services">Services</a></li>
+                <li><a href="about.html" class="text-ffffff hover:text-f4c7ab" aria-label="About">About</a></li>
+                <li><a href="contact.html" class="text-ffffff hover:text-f4c7ab" aria-label="Contact">Contact</a></li>
+                <li><a href="quote.html" class="text-ffffff hover:text-f4c7ab font-bold" aria-label="Request a Quote">Request a Quote</a></li>
             </ul>
         </nav>
     </header>
     <main class="container mx-auto py-6">
         <section id="home" class="hero">
-            <img src="original-C24113FC-2B34-41BF-8B04-9A2170642755.jpeg" alt="Hero Image" loading="lazy">
+            <img src="/images/hero-calibration-equipment.webp" alt="Precision calibration equipment in action" loading="lazy">
             <div class="hero-content">
-                <h1 class="text-4xl font-oswald text-white mb-4">Welcome to Fundamental Calibrations</h1>
-                <p class="text-lg mb-4">Veteran and family owned with 30 years of precision expertise.</p>
-                <a href="quote.html" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700" aria-label="Request a Quote">Request a Quote</a>
+                <h1 class="text-4xl mb-4">Welcome to Fundamental Calibrations</h1>
+                <p class="text-lg mb-4">Veteran and family-owned with 30 years of precision expertise.</p>
+                <a href="quote.html" class="bg-f05454 text-ffffff px-6 py-3 rounded-lg hover:bg-1a9a9a" aria-label="Request a Quote">Request a Quote</a> <!-- Coral Glow button, hover Vibrant Teal -->
             </div>
         </section>
-        <div class="mt-12"></div> <!-- Spacer between hero and services -->
+        <div class="mt-12"></div>
         <section class="text-center">
-            <h2 class="text-3xl font-oswald text-green-600 mb-6">Our Calibration Services</h2>
+            <h2 class="text-3xl text-f05454 mb-6">Our Calibration Services</h2> <!-- Coral Glow heading -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="service-card bg-white rounded-lg shadow-md">
-                    <img src="original-1DB5844C-728B-402F-8908-597E41F2729D.jpeg" alt="Tri-State Service" class="service-img rounded-t-lg" loading="lazy">
+                <div class="service-card bg-ffffff rounded-lg shadow-md" role="button" tabindex="0"> <!-- Clean White card -->
+                    <img src="/images/tri-state-service.webp" alt="Calibration services for PA, DE, NJ" class="service-img rounded-t-lg" loading="lazy">
+                    <div class="service-title">Tri-State Service</div>
                     <div class="service-overlay">
-                        <h3 class="text-xl font-oswald">Tri-State Service</h3>
                         <p>Serving PA, DE, and NJ with precision.</p>
                     </div>
                 </div>
-                <div class="service-card bg-white rounded-lg shadow-md">
-                    <img src="original-6320DB52-070A-4999-A7F6-9F185FAB3C74.jpeg" alt="30 Years Experience" class="service-img rounded-t-lg" loading="lazy">
+                <div class="service-card bg-ffffff rounded-lg shadow-md" role="button" tabindex="0"> <!-- Clean White card -->
+                    <img src="/images/experience.webp" alt="30 years of calibration expertise" class="service-img rounded-t-lg" loading="lazy">
+                    <div class="service-title">30 Years Experience</div>
                     <div class="service-overlay">
-                        <h3 class="text-xl font-oswald">30 Years Experience</h3>
                         <p>Decades of reliable calibration expertise.</p>
                     </div>
                 </div>
-                <div class="service-card bg-white rounded-lg shadow-md">
-                    <img src="original-195CA4A6-81FB-4437-96D9-EBD566F17D0C.jpeg" alt="Affordable Options" class="service-img rounded-t-lg" loading="lazy">
+                <div class="service-card bg-ffffff rounded-lg shadow-md" role="button" tabindex="0"> <!-- Clean White card -->
+                    <img src="/images/affordable-options.webp" alt="Affordable calibration solutions" class="service-img rounded-t-lg" loading="lazy">
+                    <div class="service-title">Affordable Options</div>
                     <div class="service-overlay">
-                        <h3 class="text-xl font-oswald">Affordable Options</h3>
                         <p>Cost-effective solutions for all budgets.</p>
                     </div>
                 </div>
-                <div class="service-card bg-white rounded-lg shadow-md">
+                <div class="service-card bg-ffffff rounded-lg shadow-md"> <!-- Clean White card -->
                     <div class="p-4">
-                        <h3 class="text-xl font-oswald text-green-600">Fast Turnaround</h3>
+                        <h3 class="text-xl text-f05454">Fast Turnaround</h3> <!-- Coral Glow heading -->
                         <p class="mt-2">Quick calibrations with expedited options.</p>
-                        <a href="quote.html" class="mt-4 inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700" aria-label="Request a Quote">Request a Quote</a>
+                        <a href="quote.html" class="mt-4 inline-block bg-f05454 text-ffffff px-4 py-2 rounded-lg hover:bg-1a9a9a" aria-label="Request a Quote">Request a Quote</a> <!-- Coral Glow button, hover Vibrant Teal -->
                     </div>
                 </div>
             </div>
         </section>
-        <div class="mt-16"></div> <!-- Spacer before footer -->
+        <div class="mt-16"></div>
     </main>
-    <footer class="bg-green-800 text-white text-center py-4">
-        <p>&copy; 2025 Fundamental Calibrations | <a href="about.html" class="text-gray-200 hover:underline" aria-label="About page">About</a> | <a href="services.html" class="text-gray-200 hover:underline" aria-label="Services page">Services</a> | <a href="contact.html" class="text-gray-200 hover:underline" aria-label="Contact page">Contact</a> | <a href="privacy-policy.html" class="text-gray-200 hover:underline" aria-label="Privacy Policy">Privacy Policy</a> | <a href="terms-of-service.html" class="text-gray-200 hover:underline" aria-label="Terms of Service">Terms of Service</a></p>
-        <div class="payment-options mt-2">
-            <i class="fab fa-cc-visa text-xl mr-2" aria-label="Visa accepted"></i>
-            <i class="fab fa-cc-mastercard text-xl mr-2" aria-label="MasterCard accepted"></i>
-            <i class="fab fa-cc-amex text-xl mr-2" aria-label="American Express accepted"></i>
-            <i class="fab fa-cc-discover text-xl" aria-label="Discover accepted"></i>
+    <footer class="bg-4a4e55 text-ffffff text-center py-4"> <!-- Slate Gray footer, Clean White text -->
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> Fundamental Calibrations | 
+            <a href="about.html" class="text-f4c7ab hover:underline" aria-label="About page">About</a> | 
+            <a href="services.html" class="text-f4c7ab hover:underline" aria-label="Services page">Services</a> | 
+            <a href="contact.html" class="text-f4c7ab hover:underline" aria-label="Contact page">Contact</a> | 
+            <a href="privacy-policy.html" class="text-f4c7ab hover:underline" aria-label="Privacy Policy">Privacy Policy</a> | 
+            <a href="terms-of-service.html" class="text-f4c7ab hover:underline" aria-label="Terms of Service">Terms of Service</a>
+        </p>
+        <div class="payment-options mt-2 flex justify-center space-x-2">
+            <svg class="w-6 h-6 text-ffffff" aria-label="Visa accepted"><use xlink:href="/icons/visa.svg"></use></svg>
+            <svg class="w-6 h-6 text-ffffff" aria-label="MasterCard accepted"><use xlink:href="/icons/mastercard.svg"></use></svg>
+            <svg class="w-6 h-6 text-ffffff" aria-label="American Express accepted"><use xlink:href="/icons/amex.svg"></use></svg>
+            <svg class="w-6 h-6 text-ffffff" aria-label="Discover accepted"><use xlink:href="/icons/discover.svg"></use></svg>
         </div>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
