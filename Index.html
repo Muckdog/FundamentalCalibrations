@@ -106,7 +106,7 @@
             opacity: 1;
         }
         .logo {
-            max-width: 300px;
+            max-width: 225px;
             height: auto;
             display: block;
         }
@@ -123,6 +123,9 @@
             justify-content: flex-end;
             flex-grow: 1;
         }
+        .nav-links a {
+            font-size: 54px;
+        }
         @media (max-width: 768px) {
             .hero {
                 height: 300px;
@@ -138,7 +141,7 @@
                 padding: 0.3rem 0.6rem;
             }
             .logo {
-                max-width: 200px;
+                max-width: 150px;
             }
             .header-content {
                 flex-direction: column;
@@ -148,21 +151,24 @@
                 justify-content: center;
                 margin-top: 10px;
             }
+            .nav-links a {
+                font-size: 36px;
+            }
         }
     </style>
 </head>
 <body style="background-color: #FEFEF0; color: #2F3514;"> <!-- Very Subtle Pastel Yellow background, Dark Olive text -->
     <header style="background-color: #E1DBCA;" class="sticky top-0 z-10 shadow-md"> <!-- Light Beige header -->
-        <nav class="container mx-auto p-4" role="navigation" aria-label="Main navigation">
+        <nav class="container mx-auto p-2" role="navigation" aria-label="Main navigation">
             <div class="header-content">
                 <a href="#home" aria-label="Fundamental Calibrations Home">
                     <img src="Untitled (1) copy (10).png" alt="Fundamental Calibrations Logo" class="logo" loading="lazy" onerror="this.style.display='none';">
                 </a>
                 <ul class="nav-links flex space-x-6">
-                    <li><a href="#home" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Home">Home</a></li>
-                    <li><a href="services.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Services">Services</a></li>
-                    <li><a href="about.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="About">About</a></li>
-                    <li><a href="contact.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Contact">Contact</a></li>
+                    <li><a href="#home" style="color: #CA9A00; text-decoration: none;" class="hover:text-ffffff" aria-label="Home">Home</a></li>
+                    <li><a href="services.html" style="color: #CA9A00; text-decoration: none;" class="hover:text-ffffff" aria-label="Services">Services</a></li>
+                    <li><a href="about.html" style="color: #CA9A00; text-decoration: none;" class="hover:text-ffffff" aria-label="About">About</a></li>
+                    <li><a href="contact.html" style="color: #CA9A00; text-decoration: none;" class="hover:text-ffffff" aria-label="Contact">Contact</a></li>
                     <li><a href="quote.html" style="color: #000000; text-decoration: none;" class="hover:text-ffffff font-bold" aria-label="Request a Quote">Request a Quote</a></li>
                 </ul>
             </div>
@@ -175,12 +181,12 @@
             <div class="hero-content">
                 <h1 class="text-4xl mb-4">Welcome to Fundamental Calibrations</h1>
                 <p class="text-lg mb-4">Veteran and family-owned with 30 years of precision expertise.</p>
-                <a href="quote.html" style="background-color: #E1DBCA; color: #000000; text-decoration: none;" class="px-6 py-3 rounded-lg hover:bg-cd7f32 inline-block" aria-label="Request a Quote">Request a Quote</a> <!-- Light Beige button, Black text, hover Yellowish Bronze -->
+                <a href="quote.html" style="background-color: #E1DBCA; color: #000000; text-decoration: none;" class="px-6 py-3 rounded-lg hover:bg-ca9a00 inline-block" aria-label="Request a Quote">Request a Quote</a> <!-- Light Beige button, Black text, hover Warm Gold -->
             </div>
         </section>
         <div class="mt-12"></div>
         <section class="text-center">
-            <h2 style="color: #CD7F32;" class="text-3xl mb-6">Our Calibration Services</h2> <!-- Yellowish Bronze heading -->
+            <h2 style="color: #CA9A00;" class="text-3xl mb-6">Our Calibration Services</h2> <!-- Warm Gold heading -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="service-card bg-white rounded-lg shadow-md" role="button" tabindex="0">
                     <img src="original-1DB5844C-728B-402F-8908-597E41F2729D.jpeg" alt="Calibration services for PA, DE, NJ" class="service-img rounded-t-lg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -208,9 +214,9 @@
                 </div>
                 <div class="service-card bg-white rounded-lg shadow-md">
                     <div class="p-4">
-                        <h3 style="color: #CD7F32;" class="text-xl">Fast Turnaround</h3> <!-- Yellowish Bronze heading -->
+                        <h3 style="color: #CA9A00;" class="text-xl">Fast Turnaround</h3> <!-- Warm Gold heading -->
                         <p class="mt-2">Quick calibrations with expedited options.</p>
-                        <a href="quote.html" style="background-color: #E1DBCA; color: #000000; text-decoration: none;" class="mt-4 inline-block px-4 py-2 rounded-lg hover:bg-cd7f32" aria-label="Request a Quote">Request a Quote</a> <!-- Light Beige button, Black text, hover Yellowish Bronze -->
+                        <a href="quote.html" style="background-color: #E1DBCA; color: #000000; text-decoration: none;" class="mt-4 inline-block px-4 py-2 rounded-lg hover:bg-ca9a00" aria-label="Request a Quote">Request a Quote</a> <!-- Light Beige button, Black text, hover Warm Gold -->
                     </div>
                 </div>
             </div>
