@@ -71,14 +71,14 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background-color: #e5e7eb;
+            background-color: #fffde7; /* Pastel Yellow fallback */
         }
         .service-title {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(80, 200, 120, 0.7); /* Emerald Green */
+            background: rgba(75, 83, 32, 0.7); /* Army Green */
             color: #FFFFFF;
             padding: 0.5rem 1rem;
             border-radius: 0.25rem;
@@ -105,6 +105,12 @@
         .service-card:hover .service-overlay, .service-card:focus-within .service-overlay {
             opacity: 1;
         }
+        .logo {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
         @media (max-width: 768px) {
             .hero {
                 height: 300px;
@@ -119,17 +125,23 @@
                 font-size: 1rem;
                 padding: 0.3rem 0.6rem;
             }
+            .logo {
+                max-width: 100px;
+            }
         }
     </style>
 </head>
-<body style="background-color: #E5E7EB; color: #1B4D3E;"> <!-- Light Grey background, Deep Forest text -->
-    <header style="background-color: #50C878;" class="sticky top-0 z-10 shadow-md"> <!-- Emerald Green header -->
+<body style="background-color: #FFFDE7; color: #2F3514;"> <!-- Pastel Yellow background, Dark Olive text -->
+    <header style="background-color: #4B5320;" class="sticky top-0 z-10 shadow-md"> <!-- Army Green header -->
         <nav class="container mx-auto p-4" role="navigation" aria-label="Main navigation">
+            <a href="#home" aria-label="Fundamental Calibrations Home">
+                <img src="Untitled (1) copy (10).png" alt="Fundamental Calibrations Logo" class="logo" loading="lazy" onerror="this.style.display='none';">
+            </a>
             <ul class="flex justify-center space-x-6">
-                <li><a href="#home" style="color: #FF7E42; text-decoration: none;" class="hover:text-ffffff" aria-label="Home">Home</a></li>
-                <li><a href="services.html" style="color: #FF7E42; text-decoration: none;" class="hover:text-ffffff" aria-label="Services">Services</a></li>
-                <li><a href="about.html" style="color: #FF7E42; text-decoration: none;" class="hover:text-ffffff" aria-label="About">About</a></li>
-                <li><a href="contact.html" style="color: #FF7E42; text-decoration: none;" class="hover:text-ffffff" aria-label="Contact">Contact</a></li>
+                <li><a href="#home" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Home">Home</a></li>
+                <li><a href="services.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Services">Services</a></li>
+                <li><a href="about.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="About">About</a></li>
+                <li><a href="contact.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Contact">Contact</a></li>
                 <li><a href="quote.html" style="color: #000000; text-decoration: none;" class="hover:text-ffffff font-bold" aria-label="Request a Quote">Request a Quote</a></li>
             </ul>
         </nav>
@@ -137,20 +149,20 @@
     <main class="container mx-auto py-6">
         <section id="home" class="hero">
             <img src="original-C24113FC-2B34-41BF-8B04-9A2170642755.jpeg" alt="Precision calibration equipment in action" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display: none; width: 100%; height: 100%; background-color: #e5e7eb; position: absolute; top: 0; left: 0;"></div>
+            <div style="display: none; width: 100%; height: 100%; background-color: #fffde7; position: absolute; top: 0; left: 0;"></div>
             <div class="hero-content">
                 <h1 class="text-4xl mb-4">Welcome to Fundamental Calibrations</h1>
                 <p class="text-lg mb-4">Veteran and family-owned with 30 years of precision expertise.</p>
-                <a href="quote.html" style="background-color: #FF7E42; color: #000000; text-decoration: none;" class="px-6 py-3 rounded-lg hover:bg-50c878 inline-block" aria-label="Request a Quote">Request a Quote</a> <!-- Light Orange button, Black text, hover Emerald Green -->
+                <a href="quote.html" style="background-color: #CD7F32; color: #000000; text-decoration: none;" class="px-6 py-3 rounded-lg hover:bg-4b5320 inline-block" aria-label="Request a Quote">Request a Quote</a> <!-- Yellowish Bronze button, Black text, hover Army Green -->
             </div>
         </section>
         <div class="mt-12"></div>
         <section class="text-center">
-            <h2 style="color: #FF7E42;" class="text-3xl mb-6">Our Calibration Services</h2> <!-- Light Orange heading -->
+            <h2 style="color: #CD7F32;" class="text-3xl mb-6">Our Calibration Services</h2> <!-- Yellowish Bronze heading -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="service-card bg-white rounded-lg shadow-md" role="button" tabindex="0">
                     <img src="original-1DB5844C-728B-402F-8908-597E41F2729D.jpeg" alt="Calibration services for PA, DE, NJ" class="service-img rounded-t-lg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display: none; width: 100%; height: 200px; background-color: #e5e7eb;"></div>
+                    <div style="display: none; width: 100%; height: 200px; background-color: #fffde7;"></div>
                     <div class="service-title">Tri-State Service</div>
                     <div class="service-overlay">
                         <p>Serving PA, DE, and NJ with precision.</p>
@@ -158,7 +170,7 @@
                 </div>
                 <div class="service-card bg-white rounded-lg shadow-md" role="button" tabindex="0">
                     <img src="original-6320DB52-070A-4999-A7F6-9F185FAB3C74.jpeg" alt="30 years of calibration expertise" class="service-img rounded-t-lg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display: none; width: 100%; height: 200px; background-color: #e5e7eb;"></div>
+                    <div style="display: none; width: 100%; height: 200px; background-color: #fffde7;"></div>
                     <div class="service-title">30 Years Experience</div>
                     <div class="service-overlay">
                         <p>Decades of reliable calibration expertise.</p>
@@ -166,7 +178,7 @@
                 </div>
                 <div class="service-card bg-white rounded-lg shadow-md" role="button" tabindex="0">
                     <img src="original-195CA4A6-81FB-4437-96D9-EBD566F17D0C.jpeg" alt="Affordable calibration solutions" class="service-img rounded-t-lg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display: none; width: 100%; height: 200px; background-color: #e5e7eb;"></div>
+                    <div style="display: none; width: 100%; height: 200px; background-color: #fffde7;"></div>
                     <div class="service-title">Affordable Options</div>
                     <div class="service-overlay">
                         <p>Cost-effective solutions for all budgets.</p>
@@ -174,28 +186,28 @@
                 </div>
                 <div class="service-card bg-white rounded-lg shadow-md">
                     <div class="p-4">
-                        <h3 style="color: #FF7E42;" class="text-xl">Fast Turnaround</h3> <!-- Light Orange heading -->
+                        <h3 style="color: #CD7F32;" class="text-xl">Fast Turnaround</h3> <!-- Yellowish Bronze heading -->
                         <p class="mt-2">Quick calibrations with expedited options.</p>
-                        <a href="quote.html" style="background-color: #FF7E42; color: #000000; text-decoration: none;" class="mt-4 inline-block px-4 py-2 rounded-lg hover:bg-50c878" aria-label="Request a Quote">Request a Quote</a> <!-- Light Orange button, Black text, hover Emerald Green -->
+                        <a href="quote.html" style="background-color: #CD7F32; color: #000000; text-decoration: none;" class="mt-4 inline-block px-4 py-2 rounded-lg hover:bg-4b5320" aria-label="Request a Quote">Request a Quote</a> <!-- Yellowish Bronze button, Black text, hover Army Green -->
                     </div>
                 </div>
             </div>
         </section>
         <div class="mt-16"></div>
     </main>
-    <footer style="background-color: #4CAF83; color: #FF7E42;" class="text-center py-4"> <!-- Lighter Forest footer, Light Orange text -->
+    <footer style="background-color: #829347; color: #CD7F32;" class="text-center py-4"> <!-- Light Army Green footer, Yellowish Bronze text -->
         <p>&copy; <script>document.write(new Date().getFullYear());</script> Fundamental Calibrations | 
-            <a href="about.html" style="color: #FF7E42; text-decoration: none;" class="hover:text-ffffff" aria-label="About page">About</a> | 
-            <a href="services.html" style="color: #FF7E42; text-decoration: none;" class="hover:text-ffffff" aria-label="Services page">Services</a> | 
-            <a href="contact.html" style="color: #FF7E42; text-decoration: none;" class="hover:text-ffffff" aria-label="Contact page">Contact</a> | 
-            <a href="privacy-policy.html" style="color: #FF7E42; text-decoration: none;" class="hover:text-ffffff" aria-label="Privacy Policy">Privacy Policy</a> | 
-            <a href="terms-of-service.html" style="color: #FF7E42; text-decoration: none;" class="hover:text-ffffff" aria-label="Terms of Service">Terms of Service</a>
+            <a href="about.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="About page">About</a> | 
+            <a href="services.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Services page">Services</a> | 
+            <a href="contact.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Contact page">Contact</a> | 
+            <a href="privacy-policy.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Privacy Policy">Privacy Policy</a> | 
+            <a href="terms-of-service.html" style="color: #CD7F32; text-decoration: none;" class="hover:text-ffffff" aria-label="Terms of Service">Terms of Service</a>
         </p>
         <div class="payment-options mt-2 flex justify-center space-x-2">
-            <svg class="w-6 h-6" style="color: #FF7E42;" aria-label="Visa accepted"><use xlink:href="/icons/visa.svg"></use></svg>
-            <svg class="w-6 h-6" style="color: #FF7E42;" aria-label="MasterCard accepted"><use xlink:href="/icons/mastercard.svg"></use></svg>
-            <svg class="w-6 h-6" style="color: #FF7E42;" aria-label="American Express accepted"><use xlink:href="/icons/amex.svg"></use></svg>
-            <svg class="w-6 h-6" style="color: #FF7E42;" aria-label="Discover accepted"><use xlink:href="/icons/discover.svg"></use></svg>
+            <svg class="w-6 h-6" style="color: #CD7F32;" aria-label="Visa accepted"><use xlink:href="/icons/visa.svg"></use></svg>
+            <svg class="w-6 h-6" style="color: #CD7F32;" aria-label="MasterCard accepted"><use xlink:href="/icons/mastercard.svg"></use></svg>
+            <svg class="w-6 h-6" style="color: #CD7F32;" aria-label="American Express accepted"><use xlink:href="/icons/amex.svg"></use></svg>
+            <svg class="w-6 h-6" style="color: #CD7F32;" aria-label="Discover accepted"><use xlink:href="/icons/discover.svg"></use></svg>
         </div>
     </footer>
 </body>
