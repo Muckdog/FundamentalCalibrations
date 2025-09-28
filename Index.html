@@ -42,7 +42,7 @@
             position: relative;
             height: 400px;
             overflow: hidden;
-            margin-top: 100px; /* Adjust based on header height */
+            margin-top: 90px; /* Adjusted to match header height */
         }
         .hero img {
             width: 100%;
@@ -159,7 +159,7 @@
     </style>
 </head>
 <body style="background-color: #FEFEF0; color: #2F3514;"> <!-- Very Subtle Pastel Yellow background, Dark Olive text -->
-    <header style="background-color: transparent; position: absolute; top: 0; width: 100%; z-index: 1000; height: 100px;">
+    <header style="background-color: transparent; position: absolute; top: 0; width: 100%; z-index: 1000; height: 90px;">
         <nav class="container mx-auto p-2" role="navigation" aria-label="Main navigation">
             <div class="header-content">
                 <a href="#home" aria-label="Fundamental Calibrations Home">
@@ -175,7 +175,7 @@
             </div>
         </nav>
     </header>
-    <main class="container mx-auto py-4" style="padding-top: 100px;">
+    <main class="container mx-auto py-4" style="padding-top: 90px;">
         <section id="home" class="hero">
             <img src="original-C24113FC-2B34-41BF-8B04-9A2170642755.jpeg" alt="Precision calibration equipment in action" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div style="display: none; width: 100%; height: 100%; background-color: #FEFEF0; position: absolute; top: 0; left: 0;"></div>
@@ -213,16 +213,20 @@
                         <p>Cost-effective solutions for all budgets.</p>
                     </div>
                 </div>
-                <div class="service-card bg-white shadow-sm">
-                    <div class="p-2">
-                        <h3 style="color: #CA9A00;" class="text-lg">Fast Turnaround</h3>
-                        <p class="text-sm mt-1">Quick calibrations with expedited options.</p>
-                        <a href="quote.html" style="background-color: #CA9A00; color: #557200; text-decoration: none;" class="mt-2 inline-block px-3 py-1 rounded-sm hover:bg-e1dbca" aria-label="Request a Quote">Request a Quote</a>
+                <div class="service-card bg-white shadow-sm" role="button" tabindex="0">
+                    <img src="original-195CA4A6-81FB-4437-96D9-EBD566F17D0C.jpeg" alt="Fast Turnaround Service" class="service-img rounded-t-sm" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display: none; width: 100%; height: 200px; background-color: #FEFEF0;"></div>
+                    <div class="service-title">Fast Turnaround</div>
+                    <div class="service-overlay">
+                        <p>Quick calibrations with expedited options.</p>
                     </div>
                 </div>
             </div>
         </section>
         <div class="mt-8"></div>
+        <section class="text-center">
+            <img src="(f) logo.png" alt="Additional Logo" class="w-full max-w-2xl mx-auto" loading="lazy" onerror="this.style.display='none';">
+        </section>
     </main>
     <footer style="background-color: #B3A473; color: #4B5320;" class="text-center py-2">
         <p>&copy; <script>document.write(new Date().getFullYear());</script> Fundamental Calibrations | 
