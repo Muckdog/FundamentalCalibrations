@@ -40,12 +40,13 @@
             position: relative;
             height: 400px;
             overflow: hidden;
+            margin-bottom: 1rem;
         }
         .hero img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(60%);
+            filter: brightness(70%);
         }
         .hero-content {
             position: absolute;
@@ -54,15 +55,15 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: #FFFFFF;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-            background: rgba(0, 0, 0, 0.4);
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.25rem;
         }
         .service-card {
             position: relative;
             overflow: hidden;
             transition: transform 0.3s;
+            border: 1px solid #E1DBCA;
+            border-radius: 0.25rem;
         }
         .service-card:hover, .service-card:focus-within {
             transform: translateY(-5px);
@@ -71,19 +72,18 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background-color: #fefef0; /* Very Subtle Pastel Yellow fallback */
+            background-color: #FEFEF0;
         }
         .service-title {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(195, 180, 136, 0.7); /* Rich Beige */
-            color: #FFFFFF;
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.25rem;
+            background: rgba(225, 219, 202, 0.9); /* Light Beige */
+            color: #4B5320;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.125rem;
+            font-size: 1rem;
             text-align: center;
             z-index: 2;
         }
@@ -93,10 +93,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
             color: #FFFFFF;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             opacity: 0;
@@ -109,11 +108,11 @@
             max-width: 450px;
             height: auto;
             display: block;
-            margin: 20px auto;
+            margin: 1rem auto;
         }
         @media (max-width: 768px) {
             .hero {
-                height: 300px;
+                height: 250px;
             }
             .service-img {
                 height: 150px;
@@ -122,8 +121,8 @@
                 padding: 0.5rem 1rem;
             }
             .service-title {
-                font-size: 1rem;
-                padding: 0.3rem 0.6rem;
+                font-size: 0.875rem;
+                padding: 0.2rem 0.5rem;
             }
             .logo {
                 max-width: 300px;
@@ -132,9 +131,9 @@
     </style>
 </head>
 <body style="background-color: #FEFEF0; color: #2F3514;"> <!-- Very Subtle Pastel Yellow background, Dark Olive text -->
-    <header style="background-color: #C3B488;" class="sticky top-0 z-10 shadow-md"> <!-- Rich Beige header -->
+    <header style="background-color: #E1DBCA;" class="sticky top-0 z-10 shadow-md">
         <nav class="container mx-auto p-1" role="navigation" aria-label="Main navigation">
-            <ul class="flex justify-center space-x-6">
+            <ul class="flex justify-center space-x-4">
                 <li><a href="#home" style="color: #CA9A00; text-decoration: none;" class="hover:text-ffffff" aria-label="Home">Home</a></li>
                 <li><a href="services.html" style="color: #CA9A00; text-decoration: none;" class="hover:text-ffffff" aria-label="Services">Services</a></li>
                 <li><a href="about.html" style="color: #CA9A00; text-decoration: none;" class="hover:text-ffffff" aria-label="About">About</a></li>
@@ -143,7 +142,7 @@
             </ul>
         </nav>
     </header>
-    <main class="container mx-auto py-6">
+    <main class="container mx-auto py-4">
         <div class="text-center">
             <a href="#home" aria-label="Fundamental Calibrations Home">
                 <img src="Untitled (1) copy (10).png" alt="Fundamental Calibrations Logo" class="logo" loading="lazy" onerror="this.style.display='none';">
@@ -151,53 +150,53 @@
         </div>
         <section id="home" class="hero">
             <img src="original-C24113FC-2B34-41BF-8B04-9A2170642755.jpeg" alt="Precision calibration equipment in action" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display: none; width: 100%; height: 100%; background-color: #fefef0; position: absolute; top: 0; left: 0;"></div>
+            <div style="display: none; width: 100%; height: 100%; background-color: #FEFEF0; position: absolute; top: 0; left: 0;"></div>
             <div class="hero-content">
-                <h1 class="text-4xl mb-4">Welcome to Fundamental Calibrations</h1>
-                <p class="text-lg mb-4">Veteran and family-owned with 30 years of precision expertise.</p>
-                <a href="quote.html" style="background-color: #CA9A00; color: #000000; text-decoration: none;" class="px-6 py-3 rounded-lg hover:bg-c3b488 inline-block" aria-label="Request a Quote">Request a Quote</a> <!-- Warm Gold button, Black text, hover Rich Beige -->
+                <h1 class="text-3xl mb-2">Welcome to Fundamental Calibrations</h1>
+                <p class="text-base mb-2">Veteran and family-owned with 30 years of precision expertise.</p>
+                <a href="quote.html" style="background-color: #CA9A00; color: #000000; text-decoration: none;" class="px-4 py-2 rounded-md hover:bg-e1dbca inline-block" aria-label="Request a Quote">Request a Quote</a>
             </div>
         </section>
-        <div class="mt-12"></div>
+        <div class="mt-8"></div>
         <section class="text-center">
-            <h2 style="color: #CA9A00;" class="text-3xl mb-6">Our Calibration Services</h2> <!-- Warm Gold heading -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="service-card bg-white rounded-lg shadow-md" role="button" tabindex="0">
-                    <img src="original-1DB5844C-728B-402F-8908-597E41F2729D.jpeg" alt="Calibration services for PA, DE, NJ" class="service-img rounded-t-lg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display: none; width: 100%; height: 200px; background-color: #fefef0;"></div>
+            <h2 style="color: #CA9A00;" class="text-2xl mb-4">Our Calibration Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                <div class="service-card bg-white shadow-sm" role="button" tabindex="0">
+                    <img src="original-1DB5844C-728B-402F-8908-597E41F2729D.jpeg" alt="Calibration services for PA, DE, NJ" class="service-img rounded-t-sm" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display: none; width: 100%; height: 200px; background-color: #FEFEF0;"></div>
                     <div class="service-title">Tri-State Service</div>
                     <div class="service-overlay">
                         <p>Serving PA, DE, and NJ with precision.</p>
                     </div>
                 </div>
-                <div class="service-card bg-white rounded-lg shadow-md" role="button" tabindex="0">
-                    <img src="original-6320DB52-070A-4999-A7F6-9F185FAB3C74.jpeg" alt="30 years of calibration expertise" class="service-img rounded-t-lg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display: none; width: 100%; height: 200px; background-color: #fefef0;"></div>
+                <div class="service-card bg-white shadow-sm" role="button" tabindex="0">
+                    <img src="original-6320DB52-070A-4999-A7F6-9F185FAB3C74.jpeg" alt="30 years of calibration expertise" class="service-img rounded-t-sm" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display: none; width: 100%; height: 200px; background-color: #FEFEF0;"></div>
                     <div class="service-title">30 Years Experience</div>
                     <div class="service-overlay">
                         <p>Decades of reliable calibration expertise.</p>
                     </div>
                 </div>
-                <div class="service-card bg-white rounded-lg shadow-md" role="button" tabindex="0">
-                    <img src="original-195CA4A6-81FB-4437-96D9-EBD566F17D0C.jpeg" alt="Affordable calibration solutions" class="service-img rounded-t-lg" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display: none; width: 100%; height: 200px; background-color: #fefef0;"></div>
+                <div class="service-card bg-white shadow-sm" role="button" tabindex="0">
+                    <img src="original-195CA4A6-81FB-4437-96D9-EBD566F17D0C.jpeg" alt="Affordable calibration solutions" class="service-img rounded-t-sm" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display: none; width: 100%; height: 200px; background-color: #FEFEF0;"></div>
                     <div class="service-title">Affordable Options</div>
                     <div class="service-overlay">
                         <p>Cost-effective solutions for all budgets.</p>
                     </div>
                 </div>
-                <div class="service-card bg-white rounded-lg shadow-md">
-                    <div class="p-4">
-                        <h3 style="color: #CA9A00;" class="text-xl">Fast Turnaround</h3> <!-- Warm Gold heading -->
-                        <p class="mt-2">Quick calibrations with expedited options.</p>
-                        <a href="quote.html" style="background-color: #CA9A00; color: #000000; text-decoration: none;" class="mt-4 inline-block px-4 py-2 rounded-lg hover:bg-c3b488 inline-block" aria-label="Request a Quote">Request a Quote</a> <!-- Warm Gold button, Black text, hover Rich Beige -->
+                <div class="service-card bg-white shadow-sm">
+                    <div class="p-2">
+                        <h3 style="color: #CA9A00;" class="text-lg">Fast Turnaround</h3>
+                        <p class="text-sm mt-1">Quick calibrations with expedited options.</p>
+                        <a href="quote.html" style="background-color: #CA9A00; color: #000000; text-decoration: none;" class="mt-2 inline-block px-3 py-1 rounded-sm hover:bg-e1dbca" aria-label="Request a Quote">Request a Quote</a>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="mt-16"></div>
+        <div class="mt-8"></div>
     </main>
-    <footer style="background-color: #B3A473; color: #4B5320;" class="text-center py-4"> <!-- Darker Beige footer, Army Green text -->
+    <footer style="background-color: #D0C6B0; color: #4B5320;" class="text-center py-2">
         <p>&copy; <script>document.write(new Date().getFullYear());</script> Fundamental Calibrations | 
             <a href="about.html" style="color: #4B5320; text-decoration: none;" class="hover:text-ffffff" aria-label="About page">About</a> | 
             <a href="services.html" style="color: #4B5320; text-decoration: none;" class="hover:text-ffffff" aria-label="Services page">Services</a> | 
@@ -205,11 +204,11 @@
             <a href="privacy-policy.html" style="color: #4B5320; text-decoration: none;" class="hover:text-ffffff" aria-label="Privacy Policy">Privacy Policy</a> | 
             <a href="terms-of-service.html" style="color: #4B5320; text-decoration: none;" class="hover:text-ffffff" aria-label="Terms of Service">Terms of Service</a>
         </p>
-        <div class="payment-options mt-2 flex justify-center space-x-2">
-            <svg class="w-6 h-6" style="color: #4B5320;" aria-label="Visa accepted"><use xlink:href="/icons/visa.svg"></use></svg>
-            <svg class="w-6 h-6" style="color: #4B5320;" aria-label="MasterCard accepted"><use xlink:href="/icons/mastercard.svg"></use></svg>
-            <svg class="w-6 h-6" style="color: #4B5320;" aria-label="American Express accepted"><use xlink:href="/icons/amex.svg"></use></svg>
-            <svg class="w-6 h-6" style="color: #4B5320;" aria-label="Discover accepted"><use xlink:href="/icons/discover.svg"></use></svg>
+        <div class="payment-options mt-1 flex justify-center space-x-2">
+            <svg class="w-5 h-5" style="color: #4B5320;" aria-label="Visa accepted"><use xlink:href="/icons/visa.svg"></use></svg>
+            <svg class="w-5 h-5" style="color: #4B5320;" aria-label="MasterCard accepted"><use xlink:href="/icons/mastercard.svg"></use></svg>
+            <svg class="w-5 h-5" style="color: #4B5320;" aria-label="American Express accepted"><use xlink:href="/icons/amex.svg"></use></svg>
+            <svg class="w-5 h-5" style="color: #4B5320;" aria-label="Discover accepted"><use xlink:href="/icons/discover.svg"></use></svg>
         </div>
     </footer>
 </body>
