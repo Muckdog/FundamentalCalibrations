@@ -20,10 +20,11 @@
             margin: 0;
             padding: 0;
             background-color: #FEFEF0; /* Very Subtle Pastel Yellow */
-            color: #2F3514; /* Dark Olive */
+            color: #557200; /* Muted Green */
         }
         h1, h2, h3 {
             font-family: 'Oswald', sans-serif;
+            color: #557200; /* Muted Green */
         }
         .hero {
             display: none; /* Removed hero image for quote page */
@@ -36,7 +37,7 @@
             padding: 0.5rem;
             border: 1px solid #C3B488; /* Rich Beige */
             border-radius: 0.25rem;
-            color: #2F3514; /* Dark Olive */
+            color: #557200; /* Muted Green */
             background-color: #FFFFFF;
         }
         .submit-button, .add-button, .remove-button {
@@ -82,7 +83,7 @@
                 margin-bottom: 0.5rem;
             }
             .logo {
-                max-width: 150px; /* Adjusted for mobile */
+                max-width: 300px; /* Adjusted for mobile, matching index.html */
             }
         }
     </style>
@@ -92,7 +93,7 @@
         <nav class="container mx-auto p-2" role="navigation" aria-label="Main navigation">
             <div class="header-content">
                 <a href="index.html" aria-label="Fundamental Calibrations Home">
-                    <img src="Untitled (1) copy (10).png" alt="Fundamental Calibrations Logo" class="logo" style="max-width: 200px;" loading="lazy" onerror="this.style.display='none';">
+                    <img src="Untitled (1) copy (10).png" alt="Fundamental Calibrations Logo" class="logo" style="max-width: 450px;" loading="lazy" onerror="this.style.display='none';">
                 </a>
                 <ul class="nav-links flex space-x-6">
                     <li><a href="index.html" style="color: #CA9A00; text-decoration: none;" class="hover:text-ffffff" aria-label="Home">Home</a></li>
@@ -103,34 +104,34 @@
             </div>
         </nav>
     </header>
-    <main class="container mx-auto py-6" style="padding-top: 90px;">
+    <main class="container mx-auto py-4" style="padding-top: 150px;">
         <section id="request-quote" class="text-center">
-            <h2 class="text-3xl font-oswald text-CA9A00 mb-2">Request a Quote</h2> <!-- Changed to Warm Gold (#CA9A00) -->
-            <p class="text-lg mb-4 text-2F3514">(Fill in the contact information below or contact us at sales@fundamentalcalibrations.com)</p> <!-- Dark Olive -->
+            <h2 class="text-3xl font-oswald text-CA9A00 mb-2">Request a Quote</h2> <!-- Warm Gold -->
+            <p class="text-lg mb-4 text-557200">(Fill in the information below or contact us: sales@fundamentalcalibrations.com)</p> <!-- Muted Green -->
             <form id="quoteForm" name="quoteForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="max-w-3xl mx-auto bg-white border-2 border-C3B488 rounded-lg p-6 shadow-md">
                 <input type="hidden" name="form-name" value="quoteForm">
                 <p class="hidden"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label for="title" class="block text-left text-sm font-medium text-2F3514">Title</label>
+                        <label for="title" class="block text-left text-sm font-medium text-557200">Title</label>
                         <input type="text" name="title" id="title" placeholder="Title (e.g., Manager, Engineer)" class="form-input">
-                        <label for="name" class="block text-left text-sm font-medium text-2F3514 mt-2">Name *</label>
+                        <label for="name" class="block text-left text-sm font-medium text-557200 mt-2">Name *</label>
                         <input type="text" name="name" id="name" placeholder="Name" required class="form-input">
-                        <label for="company" class="block text-left text-sm font-medium text-2F3514 mt-2">Company *</label>
+                        <label for="company" class="block text-left text-sm font-medium text-557200 mt-2">Company *</label>
                         <input type="text" name="company" id="company" placeholder="Company Name" required class="form-input">
-                        <label for="phone" class="block text-left text-sm font-medium text-2F3514 mt-2">Phone Number *</label>
+                        <label for="phone" class="block text-left text-sm font-medium text-557200 mt-2">Phone Number *</label>
                         <input type="tel" name="phone" id="phone" placeholder="Phone" required class="form-input">
-                        <label for="email" class="block text-left text-sm font-medium text-2F3514 mt-2">Email *</label>
+                        <label for="email" class="block text-left text-sm font-medium text-557200 mt-2">Email *</label>
                         <input type="email" name="email" id="email" placeholder="Email" required class="form-input">
                     </div>
                     <div>
-                        <label for="companyAddress" class="block text-left text-sm font-medium text-2F3514">Address *</label>
+                        <label for="companyAddress" class="block text-left text-sm font-medium text-557200">Address *</label>
                         <input type="text" name="companyAddress" id="companyAddress" placeholder="Company Address" class="form-input">
-                        <label for="unitApt" class="block text-left text-sm font-medium text-2F3514 mt-2">Unit/Apt #</label>
+                        <label for="unitApt" class="block text-left text-sm font-medium text-557200 mt-2">Unit/Apt #</label>
                         <input type="text" name="unitApt" id="unitApt" placeholder="Unit/Apt #" class="form-input">
-                        <label for="city" class="block text-left text-sm font-medium text-2F3514 mt-2">City *</label>
+                        <label for="city" class="block text-left text-sm font-medium text-557200 mt-2">City *</label>
                         <input type="text" name="city" id="city" placeholder="City" class="form-input">
-                        <label for="state" class="block text-left text-sm font-medium text-2F3514 mt-2">State *</label>
+                        <label for="state" class="block text-left text-sm font-medium text-557200 mt-2">State *</label>
                         <select name="state" id="state" class="form-input">
                             <option value="">Select State</option>
                             <option value="CA">California</option>
@@ -146,19 +147,19 @@
                             <option value="WA">Washington</option>
                             <option value="Other">Other</option>
                         </select>
-                        <label for="zipcode" class="block text-left text-sm font-medium text-2F3514 mt-2">Zip/Postal Code *</label>
+                        <label for="zipcode" class="block text-left text-sm font-medium text-557200 mt-2">Zip/Postal Code *</label>
                         <input type="text" name="zipcode" id="zipcode" placeholder="Zipcode" class="form-input">
                     </div>
                 </div>
                 <div class="mt-4 flex items-center space-x-4">
-                    <label for="instrumentList" class="block text-left text-sm font-medium text-2F3514">Got an instrument list? Upload it here</label>
+                    <label for="instrumentList" class="block text-left text-sm font-medium text-557200">Got an instrument list? Upload it here</label>
                     <input type="file" id="instrumentList" name="instrumentList" accept=".pdf,.csv" class="form-input">
-                    <label for="isBroken" class="block text-left text-sm font-medium text-2F3514">Need repairs on any instruments?</label>
+                    <label for="isBroken" class="block text-left text-sm font-medium text-557200">Need repairs on any instruments?</label>
                     <input type="checkbox" id="isBroken" name="isBroken" class="mr-2">
                 </div>
                 <div id="items" class="mt-4">
                     <div class="item-row" data-item="1">
-                        <label class="block text-left text-sm font-medium text-2F3514">Instrument #1</label>
+                        <label class="block text-left text-sm font-medium text-557200">Instrument #1</label>
                         <input type="text" name="manufacturer[1]" placeholder="Manufacturer" class="form-input">
                         <input type="text" name="model[1]" placeholder="Model" class="form-input mt-2">
                         <input type="text" name="serial[1]" placeholder="Serial" class="form-input mt-2">
@@ -168,7 +169,7 @@
                         </div>
                     </div>
                     <div class="item-row hidden" data-item="2">
-                        <label class="block text-left text-sm font-medium text-2F3514">Instrument #2</label>
+                        <label class="block text-left text-sm font-medium text-557200">Instrument #2</label>
                         <input type="text" name="manufacturer[2]" placeholder="Manufacturer" class="form-input">
                         <input type="text" name="model[2]" placeholder="Model" class="form-input mt-2">
                         <input type="text" name="serial[2]" placeholder="Serial" class="form-input mt-2">
@@ -179,7 +180,7 @@
                         <button type="button" class="remove-button mt-2" data-item="2" aria-label="Remove instrument #2">-</button>
                     </div>
                     <div class="item-row hidden" data-item="3">
-                        <label class="block text-left text-sm font-medium text-2F3514">Instrument #3</label>
+                        <label class="block text-left text-sm font-medium text-557200">Instrument #3</label>
                         <input type="text" name="manufacturer[3]" placeholder="Manufacturer" class="form-input">
                         <input type="text" name="model[3]" placeholder="Model" class="form-input mt-2">
                         <input type="text" name="serial[3]" placeholder="Serial" class="form-input mt-2">
@@ -190,7 +191,7 @@
                         <button type="button" class="remove-button mt-2" data-item="3" aria-label="Remove instrument #3">-</button>
                     </div>
                     <div class="item-row hidden" data-item="4">
-                        <label class="block text-left text-sm font-medium text-2F3514">Instrument #4</label>
+                        <label class="block text-left text-sm font-medium text-557200">Instrument #4</label>
                         <input type="text" name="manufacturer[4]" placeholder="Manufacturer" class="form-input">
                         <input type="text" name="model[4]" placeholder="Model" class="form-input mt-2">
                         <input type="text" name="serial[4]" placeholder="Serial" class="form-input mt-2">
@@ -201,7 +202,7 @@
                         <button type="button" class="remove-button mt-2" data-item="4" aria-label="Remove instrument #4">-</button>
                     </div>
                     <div class="item-row hidden" data-item="5">
-                        <label class="block text-left text-sm font-medium text-2F3514">Instrument #5</label>
+                        <label class="block text-left text-sm font-medium text-557200">Instrument #5</label>
                         <input type="text" name="manufacturer[5]" placeholder="Manufacturer" class="form-input">
                         <input type="text" name="model[5]" placeholder="Model" class="form-input mt-2">
                         <input type="text" name="serial[5]" placeholder="Serial" class="form-input mt-2">
