@@ -81,6 +81,9 @@
                 width: 100%;
                 margin-bottom: 0.5rem;
             }
+            .logo {
+                max-width: 150px; /* Adjusted for mobile */
+            }
         }
     </style>
 </head>
@@ -102,7 +105,7 @@
     </header>
     <main class="container mx-auto py-6" style="padding-top: 90px;">
         <section id="request-quote" class="text-center">
-            <h2 class="text-3xl font-oswald text-CA9A00 mb-2">Request a Quote</h2> <!-- Warm Gold -->
+            <h2 class="text-3xl font-oswald text-CA9A00 mb-2">Request a Quote</h2> <!-- Changed to Warm Gold (#CA9A00) -->
             <p class="text-lg mb-4 text-2F3514">(Fill in the contact information below or contact us at sales@fundamentalcalibrations.com)</p> <!-- Dark Olive -->
             <form id="quoteForm" name="quoteForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" class="max-w-3xl mx-auto bg-white border-2 border-C3B488 rounded-lg p-6 shadow-md">
                 <input type="hidden" name="form-name" value="quoteForm">
