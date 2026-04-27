@@ -5,48 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Fundamental Calibrations</title>
     <meta name="description" content="Learn about Fundamental Calibrations, a veteran- and family-owned business with 30 years of metrology expertise.">
-    <meta name="keywords" content="about calibration, veteran owned business, family operated, metrology expertise">
     <meta property="og:title" content="About Us - Fundamental Calibrations">
-    <meta property="og:description" content="Discover our 30-year legacy in precision calibration services.">
-    <meta property="og:type" content="website">
-    <link rel="canonical" href="https://yourdomain.com/about.html">
+    <meta property="og:description" content="Veteran-owned with 30 years of precision calibration experience.">
+    <meta property="og:image" content="FunCalLogo.jpeg">
+    <link rel="canonical" href="https://fundamentalcalibrations.com/about.html">
+    <link rel="icon" href="FunCalLogo.jpeg" type="image/jpeg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Replace with your kit -->
+
+    <style>
+        :root {
+            --green-dark: #1e3f2b;
+            --green-accent: #2e7d32;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8f9f6;
+            color: #1e3f2b;
+        }
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+        }
+        .btn-primary {
+            background-color: var(--green-accent);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--green-dark);
+        }
+    </style>
 </head>
-<body class="bg-gray-200 text-gray-800 font-lato">
-    <header class="bg-green-600 sticky top-0 z-10 shadow-md">
-        <nav class="container mx-auto p-4" role="navigation" aria-label="Main navigation">
-            <ul class="flex justify-center space-x-6">
-                <li><a href="index.html" class="text-white hover:text-gray-200" aria-label="Home">Home</a></li>
-                <li class="relative group">
-                    <a href="#" class="text-white hover:text-gray-200" aria-haspopup="true">Services</a>
-                    <div class="absolute hidden group-hover:block bg-green-700 mt-2 w-40 rounded-md shadow-lg">
-                        <a href="services.html" class="block px-4 py-2 text-white hover:bg-green-600" aria-label="Services">Services</a>
-                        <a href="quote.html" class="block px-4 py-2 text-white hover:bg-green-600" aria-label="Request a Quote">Request a Quote</a>
-                    </div>
-                </li>
-                <li><a href="about.html" class="text-white hover:text-gray-200" aria-label="About">About</a></li>
-                <li><a href="contact.html" class="text-white hover:text-gray-200" aria-label="Contact">Contact</a></li>
-            </ul>
+<body>
+    <!-- Consistent Header -->
+    <header style="background-color: #ffffff; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <nav class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="https://fundamentalcalibrations.com">
+                    <img src="FunCalLogo.jpeg" alt="Fundamental Calibrations Logo" class="h-24 w-auto max-w-[320px] ml-4" loading="lazy">
+                </a>
+                <ul class="flex space-x-8 text-lg items-center">
+                    <li><a href="https://fundamentalcalibrations.com" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="text-[#2e7d32] font-bold">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="quote.html" class="btn-primary px-6 py-3 rounded-lg font-bold hover:text-white">Request a Quote</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <main class="container mx-auto py-6">
-        <section id="about" class="max-w-2xl mx-auto p-6 text-center">
-            <h2 class="text-4xl font-oswald text-green-600 mb-4">About Us</h2>
-            <p class="text-lg">Our team at Fundamental Calibrations brings <span class="font-bold text-green-600">30 years of expertise</span> in metrology and instrumentation, a foundation built on precision and unwavering attention to detail. This depth of experience ensures top-quality calibration services that businesses of all sizes can depend on.</p>
-            <p class="text-lg mt-4">Founded and operated by veterans, we infuse our work with a steadfast commitment to excellence, shaped by resilience and discipline honed through years of service. This background drives our dedication to delivering results with consistency and strength, ensuring every calibration meets the highest standards. As a <span class="font-bold text-green-600">family-employed and operated</span> business, we bring a personal touch to our operations, with multiple generations fostering a culture of collaboration and care that enhances our service quality. Our family roots mean we treat every client with a sense of partnership, rooted in mutual respect.</p>
-            <p class="text-lg mt-4">Whether you're a small startup or a large enterprise, we understand the need for dependable, cost-effective solutions that adapt to your unique challenges. Our team is dedicated to meeting your calibration needs with tailored services, offering flexible options that cater to diverse demands while maintaining the highest quality. We aim to foster long-term partnerships by providing consistent support, addressing your specific requirements with efficiency, and standing by you as a reliable ally in the industry.</p>
-            <div class="mission-statement text-4xl font-oswald text-green-600 mt-10">Our Mission Statement</div>
-            <div class="mission-spacer h-48"></div>
-        </section>
+
+    <main class="max-w-4xl mx-auto px-6 pt-32 pb-24">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-bold mb-6 text-[#1e3f2b]">About Us</h1>
+            <p class="text-xl text-gray-600">Veteran & Family-Owned • 30 Years of Precision</p>
+        </div>
+
+        <div class="prose prose-lg mx-auto text-gray-700 space-y-8">
+            <p class="text-lg">
+                Fundamental Calibrations was founded on a simple principle: deliver exceptional calibration services with honesty, precision, and care. With over <strong>30 years of experience</strong> in metrology, we’ve built a reputation for reliability that businesses across Pennsylvania, Delaware, and New Jersey trust.
+            </p>
+
+            <p>
+                As a <strong>veteran-owned and family-operated business</strong>, we bring discipline, attention to detail, and a personal touch to everything we do. Multiple generations work together to ensure every customer receives the highest level of service and respect.
+            </p>
+
+            <p>
+                We understand that accurate calibration is critical to your operations. That’s why we focus on fast turnaround, clear communication, and flexible solutions — whether you need standard service, expedited calibration, or on-site support.
+            </p>
+
+            <div class="bg-white border border-[#2e7d32] rounded-3xl p-10 my-12 text-center">
+                <h3 class="text-3xl font-semibold mb-6 text-[#1e3f2b]">Our Mission</h3>
+                <p class="text-xl italic text-gray-600">
+                    "To provide precise, dependable calibration services with the integrity and care our customers deserve."
+                </p>
+            </div>
+        </div>
+
+        <!-- Suggested Image Placement -->
+        <div class="mt-16 flex justify-center">
+            <img src="IMG_8851.jpeg" alt="Fundamental Calibrations Team & Equipment" 
+                 class="rounded-3xl shadow-xl max-w-2xl w-full">
+        </div>
+
+        <div class="text-center mt-16">
+            <a href="quote.html" class="btn-primary inline-block px-12 py-5 text-xl font-bold rounded-2xl">
+                Get a Quote Today
+            </a>
+        </div>
     </main>
-    <footer class="bg-green-800 text-white text-center py-4">
-        <p>&copy; 2025 Fundamental Calibrations | <a href="about.html" class="text-gray-200 hover:underline" aria-label="About page">About</a> | <a href="services.html" class="text-gray-200 hover:underline" aria-label="Services page">Services</a> | <a href="contact.html" class="text-gray-200 hover:underline" aria-label="Contact page">Contact</a> | <a href="privacy-policy.html" class="text-gray-200 hover:underline" aria-label="Privacy Policy">Privacy Policy</a> | <a href="terms-of-service.html" class="text-gray-200 hover:underline" aria-label="Terms of Service">Terms of Service</a></p>
-        <div class="payment-options mt-2">
-            <i class="fab fa-cc-visa text-xl mr-2" aria-label="Visa accepted"></i>
-            <i class="fab fa-cc-mastercard text-xl mr-2" aria-label="MasterCard accepted"></i>
-            <i class="fab fa-cc-amex text-xl mr-2" aria-label="American Express accepted"></i>
-            <i class="fab fa-cc-discover text-xl" aria-label="Discover accepted"></i>
+
+    <!-- Matching Footer -->
+    <footer class="text-center py-8">
+        <p class="text-sm">&copy; <script>document.write(new Date().getFullYear());</script> Fundamental Calibrations</p>
+        <div class="mt-4 flex justify-center space-x-6 text-sm">
+            <a href="about.html" class="hover:text-white">About</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+            <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
         </div>
     </footer>
 </body>
