@@ -7,33 +7,73 @@
     <meta name="description" content="Expert precision calibration, preventative maintenance, and fast turnaround services serving PA, DE, and NJ.">
     <meta property="og:title" content="Services - Fundamental Calibrations">
     <meta property="og:description" content="30 years of calibration expertise.">
+    <meta property="og:type" content="website">
     <meta property="og:image" content="FunCalLogo.jpeg">
     <link rel="canonical" href="https://fundamentalcalibrations.com/services.html">
     <link rel="icon" href="FunCalLogo.jpeg" type="image/jpeg">
     
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --green-dark: #1e3f2b;
+            --green-accent: #2e7d32;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8f9f6;
+            color: #1e3f2b;
+        }
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+        }
+        .service-card {
+            border: 2px solid var(--green-accent);
+            transition: all 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(46, 125, 50, 0.15);
+        }
+        .nav-link {
+            color: #1e3f2b;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: var(--green-accent);
+        }
+        .btn-primary {
+            background-color: var(--green-accent);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--green-dark);
+        }
+        footer {
+            background-color: var(--green-dark);
+            color: #d1e0d5;
+        }
+    </style>
 </head>
-<body class="bg-[#f8f9f6] text-[#1e3f2b]">
-    
-    <!-- Header - Matching Index -->
+<body>
+    <!-- Header - Exact match to index -->
     <header style="background-color: #ffffff; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
         <nav class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="https://fundamentalcalibrations.com">
-                    <img src="FunCalLogo.jpeg" alt="Fundamental Calibrations Logo" class="h-24 w-auto max-w-[320px] ml-4" loading="lazy">
+                    <img src="FunCalLogo.jpeg" 
+                         alt="Fundamental Calibrations Logo" 
+                         class="h-24 w-auto max-w-[320px] ml-4" 
+                         loading="lazy">
                 </a>
-                <ul class="flex space-x-8 text-lg items-center">
-                    <li><a href="https://fundamentalcalibrations.com" class="hover:text-[#2e7d32]">Home</a></li>
-                    <li><a href="services.html" class="text-[#2e7d32] font-bold">Services</a></li>
-                    <li><a href="about.html" class="hover:text-[#2e7d32]">About</a></li>
-                    <li><a href="contact.html" class="hover:text-[#2e7d32]">Contact</a></li>
-                    <li>
-                        <a href="quote.html" 
-                           class="bg-[#2e7d32] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#1e3f2b]">
-                            Request a Quote
-                        </a>
-                    </li>
+               
+                <ul class="flex space-x-8 text-lg">
+                    <li><a href="https://fundamentalcalibrations.com" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="quote.html" class="btn-primary px-6 py-2 rounded-lg font-bold hover:text-white">Request a Quote</a></li>
                 </ul>
             </div>
         </nav>
@@ -78,7 +118,7 @@
             <div class="flex-1 text-center md:text-left">
                 <h3 class="text-3xl font-semibold mb-4">Ready to Get Started?</h3>
                 <p class="text-gray-600 mb-6">Contact us today for a fast, competitive quote tailored to your needs.</p>
-                <a href="quote.html" class="inline-block px-10 py-5 bg-[#2e7d32] hover:bg-[#1e3f2b] text-white text-xl font-bold rounded-2xl transition">
+                <a href="quote.html" class="btn-primary inline-block px-10 py-5 text-xl font-bold rounded-2xl">
                     Request a Quote
                 </a>
             </div>
@@ -98,14 +138,14 @@
     </main>
 
     <!-- Footer - Matching Index -->
-    <footer style="background-color: #B3A473; color: #4B5320;" class="text-center py-8">
-        <p>&copy; <script>document.write(new Date().getFullYear());</script> Fundamental Calibrations |
-            <a href="about.html" style="color: #4B5320; text-decoration: none;" class="hover:text-white">About</a> |
-            <a href="services.html" style="color: #4B5320; text-decoration: none;" class="hover:text-white">Services</a> |
-            <a href="contact.html" style="color: #4B5320; text-decoration: none;" class="hover:text-white">Contact</a> |
-            <a href="privacy-policy.html" style="color: #4B5320; text-decoration: none;" class="hover:text-white">Privacy Policy</a> |
-            <a href="terms-of-service.html" style="color: #4B5320; text-decoration: none;" class="hover:text-white">Terms of Service</a>
-        </p>
+    <footer class="text-center py-8">
+        <p class="text-sm">&copy; <script>document.write(new Date().getFullYear());</script> Fundamental Calibrations</p>
+        <div class="mt-4 flex justify-center space-x-6 text-sm">
+            <a href="about.html" class="hover:text-white">About</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+            <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        </div>
     </footer>
 </body>
 </html>
