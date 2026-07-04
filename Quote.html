@@ -248,63 +248,24 @@
                     <!-- Instruments -->
                     <div id="items">
                 <div class="item-row" data-item="1">
-                    <label class="block text-lg font-semibold mb-3">Instrument #1</label>
-                    <input type="text" name="manufacturer[1]" placeholder="Manufacturer" class="form-input">
-                    <input type="text" name="model[1]" placeholder="Model" class="form-input mt-3">
-                    <input type="text" name="serial[1]" placeholder="Serial" class="form-input mt-3">
-                    <input type="text" name="asset[1]" placeholder="Asset Number" class="form-input mt-3">
-                    <select name="condition[1]" class="form-input mt-3"><option value="">Condition (optional)</option><option value="New">New</option><option value="Operable">Operable</option><option value="Inoperable">Inoperable</option></select>
-                    <textarea name="notes[1]" placeholder="Any notes about this instrument" class="form-input mt-3 h-24"></textarea>
-                </div>
-
-                <div class="item-row hidden" data-item="2">
-                    <label class="block text-lg font-semibold mb-3">Instrument #2</label>
-                    <input type="text" name="manufacturer[2]" placeholder="Manufacturer" class="form-input">
-                    <input type="text" name="model[2]" placeholder="Model" class="form-input mt-3">
-                    <input type="text" name="serial[2]" placeholder="Serial" class="form-input mt-3">
-                    <input type="text" name="asset[2]" placeholder="Asset Number" class="form-input mt-3">
-                    <select name="condition[2]" class="form-input mt-3"><option value="">Condition (optional)</option><option value="New">New</option><option value="Operable">Operable</option><option value="Inoperable">Inoperable</option></select>
-                    <textarea name="notes[2]" placeholder="Any notes about this instrument" class="form-input mt-3 h-24"></textarea>
-                    <button type="button" class="remove-button mt-4" data-item="2">Remove</button>
-                </div>
-
-                <div class="item-row hidden" data-item="3">
-                    <label class="block text-lg font-semibold mb-3">Instrument #3</label>
-                    <input type="text" name="manufacturer[3]" placeholder="Manufacturer" class="form-input">
-                    <input type="text" name="model[3]" placeholder="Model" class="form-input mt-3">
-                    <input type="text" name="serial[3]" placeholder="Serial" class="form-input mt-3">
-                    <input type="text" name="asset[3]" placeholder="Asset Number" class="form-input mt-3">
-                    <select name="condition[3]" class="form-input mt-3"><option value="">Condition (optional)</option><option value="New">New</option><option value="Operable">Operable</option><option value="Inoperable">Inoperable</option></select>
-                    <textarea name="notes[3]" placeholder="Any notes about this instrument" class="form-input mt-3 h-24"></textarea>
-                    <button type="button" class="remove-button mt-4" data-item="3">Remove</button>
-                </div>
-
-                <div class="item-row hidden" data-item="4">
-                    <label class="block text-lg font-semibold mb-3">Instrument #4</label>
-                    <input type="text" name="manufacturer[4]" placeholder="Manufacturer" class="form-input">
-                    <input type="text" name="model[4]" placeholder="Model" class="form-input mt-3">
-                    <input type="text" name="serial[4]" placeholder="Serial" class="form-input mt-3">
-                    <input type="text" name="asset[4]" placeholder="Asset Number" class="form-input mt-3">
-                    <select name="condition[4]" class="form-input mt-3"><option value="">Condition (optional)</option><option value="New">New</option><option value="Operable">Operable</option><option value="Inoperable">Inoperable</option></select>
-                    <textarea name="notes[4]" placeholder="Any notes about this instrument" class="form-input mt-3 h-24"></textarea>
-                    <button type="button" class="remove-button mt-4" data-item="4">Remove</button>
-                </div>
-
-                <div class="item-row hidden" data-item="5">
-                    <label class="block text-lg font-semibold mb-3">Instrument #5</label>
-                    <input type="text" name="manufacturer[5]" placeholder="Manufacturer" class="form-input">
-                    <input type="text" name="model[5]" placeholder="Model" class="form-input mt-3">
-                    <input type="text" name="serial[5]" placeholder="Serial" class="form-input mt-3">
-                    <input type="text" name="asset[5]" placeholder="Asset Number" class="form-input mt-3">
-                    <select name="condition[5]" class="form-input mt-3"><option value="">Condition (optional)</option><option value="New">New</option><option value="Operable">Operable</option><option value="Inoperable">Inoperable</option></select>
-                    <textarea name="notes[5]" placeholder="Any notes about this instrument" class="form-input mt-3 h-24"></textarea>
-                    <button type="button" class="remove-button mt-4" data-item="5">Remove</button>
+                    <div class="flex items-center justify-between mb-3">
+                        <label class="block text-lg font-semibold instr-label">Instrument #1</label>
+                        <button type="button" class="remove-button remove-instrument" style="padding:0.4rem 0.9rem;">Remove</button>
+                    </div>
+                    <input type="text" name="manufacturer[]" placeholder="Manufacturer" class="form-input">
+                    <input type="text" name="model[]" placeholder="Model" class="form-input mt-3">
+                    <input type="text" name="serial[]" placeholder="Serial" class="form-input mt-3">
+                    <input type="text" name="asset[]" placeholder="Asset Number" class="form-input mt-3">
+                    <select name="condition[]" class="form-input mt-3"><option value="">Condition (optional)</option><option value="New">New</option><option value="Operable">Operable</option><option value="Inoperable">Inoperable</option></select>
+                    <textarea name="notes[]" placeholder="Any notes about this instrument" class="form-input mt-3 h-24"></textarea>
                 </div>
                     </div>
                     <div class="mt-2">
                         <button type="button" id="addInstrument" class="add-button">+ Add Instrument</button>
-                        <span class="text-xs text-gray-500 ml-2">Add up to 5 rows — or upload a list above.</span>
+                        <span class="text-xs text-gray-500 ml-2">Add as many instruments as you need — or upload a list above.</span>
                     </div>
+                    <!-- Serialized instrument data for reliable capture -->
+                    <textarea name="instrumentList_text" id="instrumentList_text" class="hidden" aria-hidden="true"></textarea>
                 </div>
             </div>
 
@@ -336,31 +297,80 @@
         document.addEventListener('DOMContentLoaded', function() {
             const addButton = document.getElementById('addInstrument');
             const items = document.getElementById('items');
+            const form = document.getElementById('quoteForm');
 
-            addButton.addEventListener('click', function() {
-                const itemRows = items.getElementsByClassName('item-row');
-                const visibleItems = Array.from(itemRows).filter(row => !row.classList.contains('hidden')).length;
-                const nextItem = visibleItems + 1;
+            // Renumber "Instrument #N" labels top to bottom
+            function renumber() {
+                const labels = items.querySelectorAll('.instr-label');
+                labels.forEach(function(label, i) {
+                    label.textContent = 'Instrument #' + (i + 1);
+                });
+                // Hide the Remove button when only one row remains
+                const rows = items.querySelectorAll('.item-row');
+                rows.forEach(function(row) {
+                    const btn = row.querySelector('.remove-instrument');
+                    if (btn) btn.style.visibility = (rows.length <= 1) ? 'hidden' : 'visible';
+                });
+            }
 
-                if (nextItem <= 5) {
-                    const newItem = document.querySelector(`[data-item="${nextItem}"]`);
-                    if (newItem) {
-                        newItem.classList.remove('hidden');
-                    }
-                } else {
-                    alert('Maximum of 5 instruments reached.');
+            // Remove handler (event delegation so cloned rows work too)
+            items.addEventListener('click', function(e) {
+                const btn = e.target.closest('.remove-instrument');
+                if (!btn) return;
+                const rows = items.querySelectorAll('.item-row');
+                if (rows.length > 1) {
+                    btn.closest('.item-row').remove();
+                    renumber();
                 }
             });
 
-            document.querySelectorAll('.remove-button').forEach(button => {
-                button.addEventListener('click', function() {
-                    const itemNum = parseInt(this.getAttribute('data-item'));
-                    if (itemNum > 1) {
-                        const itemRow = document.querySelector(`[data-item="${itemNum}"]`);
-                        if (itemRow) itemRow.classList.add('hidden');
-                    }
-                });
+            // Add handler — clone the first row, clear its values, append
+            addButton.addEventListener('click', function() {
+                const template = items.querySelector('.item-row');
+                const clone = template.cloneNode(true);
+                clone.querySelectorAll('input, textarea').forEach(function(el) { el.value = ''; });
+                clone.querySelectorAll('select').forEach(function(el) { el.selectedIndex = 0; });
+                items.appendChild(clone);
+                renumber();
+                const firstInput = clone.querySelector('input');
+                if (firstInput) firstInput.focus();
             });
+
+            renumber();
+
+            // Serialize all instrument rows into one hidden field on submit,
+            // so Netlify reliably captures every row regardless of count
+            if (form) {
+                form.addEventListener('submit', function() {
+                    const rows = items.querySelectorAll('.item-row');
+                    const lines = [];
+                    rows.forEach(function(row, i) {
+                        const val = function(sel) {
+                            const el = row.querySelector(sel);
+                            return el ? el.value.trim() : '';
+                        };
+                        const manu = val('[name^="manufacturer"]');
+                        const model = val('[name^="model"]');
+                        const serial = val('[name^="serial"]');
+                        const asset = val('[name^="asset"]');
+                        const cond = val('[name^="condition"]');
+                        const notes = val('[name^="notes"]');
+                        if (manu || model || serial || asset || cond || notes) {
+                            const parts = [
+                                'Manufacturer: ' + manu,
+                                'Model: ' + model,
+                                'Serial: ' + serial,
+                                'Asset: ' + asset,
+                                'Condition: ' + cond
+                            ];
+                            if (notes) parts.push('Notes: ' + notes);
+                            lines.push((i + 1) + '. ' + parts.join(' | '));
+                        }
+                    });
+                    const target = document.getElementById('instrumentList_text');
+                    if (target) target.value = lines.join('\n');
+                });
+            }
 
             // Shipping "same as billing" toggle
             const sameAsBilling = document.getElementById('sameAsBilling');
