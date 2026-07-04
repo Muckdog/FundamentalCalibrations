@@ -9,32 +9,79 @@
     <meta property="og:title" content="Static Form - Fundamental Calibrations">
     <meta property="og:description" content="Explore a sample form structure from our 30-year calibration expertise.">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://yourdomain.com/static-form.html">
+    <link rel="canonical" href="https://fundamentalcalibrations.com/static-form.html">
+    <link rel="icon" href="FunCalF.jpg" type="image/jpeg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Replace with your kit -->
+    <style>
+        :root {
+            --green-dark: #1e3f2b;
+            --green-accent: #2e7d32;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8f9f6;
+            color: #1e3f2b;
+        }
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+        }
+        .nav-link {
+            color: #1e3f2b;
+            font-weight: 600;
+        }
+        .nav-link:hover {
+            color: var(--green-accent);
+        }
+        .btn-primary {
+            background-color: var(--green-accent);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--green-dark);
+        }
+        footer {
+            background-color: var(--green-dark);
+            color: #d1e0d5;
+        }
+        .page-title-band {
+            background-color: var(--green-dark);
+            margin-top: 130px;
+        }
+        @media (max-width: 768px) {
+            .page-title-band { margin-top: 110px; }
+        }
+    </style>
 </head>
-<body class="bg-gray-200 text-gray-800 font-lato">
-    <header class="bg-green-600 sticky top-0 z-10 shadow-md">
-        <nav class="container mx-auto p-4" role="navigation" aria-label="Main navigation">
-            <ul class="flex justify-center space-x-6">
-                <li><a href="index.html" class="text-white hover:text-gray-200" aria-label="Home">Home</a></li>
-                <li class="relative group">
-                    <a href="#" class="text-white hover:text-gray-200" aria-haspopup="true">Services</a>
-                    <div class="absolute hidden group-hover:block bg-green-700 mt-2 w-40 rounded-md shadow-lg">
-                        <a href="services.html" class="block px-4 py-2 text-white hover:bg-green-600" aria-label="Services">Services</a>
-                        <a href="quote.html" class="block px-4 py-2 text-white hover:bg-green-600" aria-label="Request a Quote">Request a Quote</a>
-                    </div>
-                </li>
-                <li><a href="about.html" class="text-white hover:text-gray-200" aria-label="About">About</a></li>
-                <li><a href="contact.html" class="text-white hover:text-gray-200" aria-label="Contact">Contact</a></li>
-            </ul>
+<body>
+    <header style="background-color: #ffffff; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <nav class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <img src="FunCalLogo.jpeg"
+                         alt="Fundamental Calibrations Logo"
+                         class="h-24 w-auto max-w-[320px] ml-4"
+                         loading="lazy">
+                </a>
+                <ul class="flex space-x-8 text-lg">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="quote.html" class="btn-primary px-6 py-2 rounded-lg font-bold hover:text-white">Request a Quote</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
-    <main class="container mx-auto py-6">
-        <section id="static-form" class="text-center max-w-md mx-auto">
-            <h2 class="text-3xl font-oswald text-green-600 mb-4">Sample Contact Form</h2>
-            <p class="text-lg mb-6">This is a static example of our contact form. For actual submissions, please visit the <a href="contact.html" class="text-green-600 hover:underline">Contact Us</a> page.</p>
-            <div class="bg-white p-6 rounded-lg shadow-md space-y-4">
+
+    <section class="page-title-band text-white text-center py-12 px-6">
+        <h1 class="text-4xl font-bold text-white">Sample Contact Form</h1>
+    </section>
+
+    <main class="max-w-md mx-auto px-6 py-16 text-center">
+        <p class="text-lg mb-6">This is a static example of our contact form. For actual submissions, please visit the <a href="contact.html" class="font-semibold" style="color: var(--green-accent);">Contact Us</a> page.</p>
+            <div class="bg-white border-2 border-[#2e7d32] rounded-3xl p-6 shadow-xl space-y-4 text-left">
                 <div>
                     <label class="block text-left">Reason for Contact</label>
                     <input type="text" value="Select a Reason" disabled class="w-full p-2 rounded bg-gray-100 text-gray-500" aria-label="Reason for Contact (static)">
@@ -81,15 +128,15 @@
                 </div>
                 <button disabled class="px-4 py-3 bg-green-600 text-white rounded opacity-50 cursor-not-allowed" aria-label="Submit (static)">Submit</button>
             </div>
-        </section>
     </main>
-    <footer class="bg-green-800 text-white text-center py-4">
-        <p>&copy; 2025 Fundamental Calibrations | <a href="about.html" class="text-gray-200 hover:underline" aria-label="About page">About</a> | <a href="services.html" class="text-gray-200 hover:underline" aria-label="Services page">Services</a> | <a href="contact.html" class="text-gray-200 hover:underline" aria-label="Contact page">Contact</a> | <a href="privacy-policy.html" class="text-gray-200 hover:underline" aria-label="Privacy Policy">Privacy Policy</a> | <a href="terms-of-service.html" class="text-gray-200 hover:underline" aria-label="Terms of Service">Terms of Service</a></p>
-        <div class="payment-options mt-2">
-            <i class="fab fa-cc-visa text-xl mr-2" aria-label="Visa accepted"></i>
-            <i class="fab fa-cc-mastercard text-xl mr-2" aria-label="MasterCard accepted"></i>
-            <i class="fab fa-cc-amex text-xl mr-2" aria-label="American Express accepted"></i>
-            <i class="fab fa-cc-discover text-xl" aria-label="Discover accepted"></i>
+
+    <footer class="text-center py-8">
+        <p class="text-sm">&copy; <script>document.write(new Date().getFullYear());</script> Fundamental Calibrations</p>
+        <div class="mt-4 flex justify-center space-x-6 text-sm">
+            <a href="about.html" class="hover:text-white">About</a>
+            <a href="services.html" class="hover:text-white">Services</a>
+            <a href="contact.html" class="hover:text-white">Contact</a>
+            <a href="terms-of-service.html" class="hover:text-white">Terms</a>
         </div>
     </footer>
     <script src="script.js"></script>
